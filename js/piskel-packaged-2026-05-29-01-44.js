@@ -11843,7 +11843,7 @@ var Constants = {
 
   // Message displayed when an action will lead to erase the current animation.
   CONFIRM_OVERWRITE:
-    "This will replace your current animation, are you sure you want to continue?",
+    "Это заменит текущую анимацию. Продолжить?",
 
   // SERVICE URLS
   APPENGINE_SAVE_URL: "save"
@@ -13331,7 +13331,7 @@ if (!Uint32Array.prototype.fill) {
         return frame.clone();
       });
       return pskl.model.Layer.fromFrames(
-        layer.getName() + " (clone)",
+        layer.getName() + " (копия)",
         clonedFrames
       );
     },
@@ -13485,7 +13485,7 @@ if (!Uint32Array.prototype.fill) {
 
       // Import the layers in the original piskel.
       importedPiskel.getLayers().forEach(function (layer) {
-        var name = layer.getName() + " (imported)";
+        var name = layer.getName() + " (импортировано)";
         var importedLayer = new pskl.model.Layer(name);
         for (var i = 0; i < piskel.getFrameCount(); i++) {
           var importedIndex = i - insertIndex;
@@ -13858,9 +13858,9 @@ if (!Uint32Array.prototype.fill) {
 
   ns.PiskelFileUtils = {
     FAILURE: {
-      EMPTY: "No data found in piskel file",
-      INVALID: "Invalid piskel file, contact us on twitter @piskelapp",
-      DESERIALIZATION: "Piskel data deserialization failed"
+      EMPTY: "В файле piskel не найдены данные",
+      INVALID: "Недопустимый файл piskel, свяжитесь с нами в Twitter @piskelapp",
+      DESERIALIZATION: "Не удалось прочитать данные Piskel"
     },
 
     /**
@@ -15005,7 +15005,7 @@ if (!Uint32Array.prototype.fill) {
       "Deserialized piskel",
       ""
     );
-    var layer = pskl.model.Layer.fromFrames("Layer 1", frames);
+    var layer = pskl.model.Layer.fromFrames("Слой 1", frames);
 
     this.callback_(
       pskl.model.Piskel.fromLayers([layer], Constants.DEFAULT.FPS, descriptor)
@@ -15083,7 +15083,7 @@ if (!Uint32Array.prototype.fill) {
         console.error("Could not create worker", e.message);
     }
 })();
-;(function(c){function a(b,d){if({}.hasOwnProperty.call(a.cache,b))return a.cache[b];var e=a.resolve(b);if(!e)throw new Error('Failed to resolve module '+b);var c={id:b,require:a,filename:b,exports:{},loaded:!1,parent:d,children:[]};d&&d.children.push(c);var f=b.slice(0,b.lastIndexOf('/')+1);return a.cache[b]=c.exports,e.call(c.exports,c,c.exports,f,b),c.loaded=!0,a.cache[b]=c.exports}a.modules={},a.cache={},a.resolve=function(b){return{}.hasOwnProperty.call(a.modules,b)?a.modules[b]:void 0},a.define=function(b,c){a.modules[b]=c};var b=function(a){return a='/',{title:'browser',version:'v0.8.19',browser:!0,env:{},argv:[],nextTick:c.setImmediate||function(a){setTimeout(a,0)},cwd:function(){return a},chdir:function(b){a=b}}}();a.define('/gif.coffee',function(d,m,l,k){function g(a,b){return{}.hasOwnProperty.call(a,b)}function j(d,b){for(var a=0,c=b.length;a<c;++a)if(a in b&&b[a]===d)return!0;return!1}function i(a,b){function d(){this.constructor=a}for(var c in b)g(b,c)&&(a[c]=b[c]);return d.prototype=b.prototype,a.prototype=new d,a.__super__=b.prototype,a}var h,c,f,b,e;f=a('events',d).EventEmitter,h=a('/browser.coffee',d),e=function(d){function a(d){var a,b;this.running=!1,this.options={},this.frames=[],this.freeWorkers=[],this.activeWorkers=[],this.setOptions(d);for(a in c)b=c[a],null!=this.options[a]?this.options[a]:this.options[a]=b}return i(a,d),c={workerScript:window.GifWorkerURL,workers:2,repeat:0,background:'#fff',quality:10,width:null,height:null,transparent:null,preserveColors:!1},b={delay:500,copy:!1},a.prototype.setOption=function(a,b){return this.options[a]=b,null!=this._canvas&&(a==='width'||a==='height')?this._canvas[a]=b:void 0},a.prototype.setOptions=function(b){var a,c;return function(d){for(a in b){if(!g(b,a))continue;c=b[a],d.push(this.setOption(a,c))}return d}.call(this,[])},a.prototype.addFrame=function(a,d){var c,e;null==d&&(d={}),c={},c.transparent=this.options.transparent;for(e in b)c[e]=d[e]||b[e];if(null!=this.options.width||this.setOption('width',a.width),null!=this.options.height||this.setOption('height',a.height),'undefined'!==typeof ImageData&&null!=ImageData&&a instanceof ImageData)c.data=a.data;else if('undefined'!==typeof CanvasRenderingContext2D&&null!=CanvasRenderingContext2D&&a instanceof CanvasRenderingContext2D||'undefined'!==typeof WebGLRenderingContext&&null!=WebGLRenderingContext&&a instanceof WebGLRenderingContext)d.copy?c.data=this.getContextData(a):c.context=a;else if(null!=a.childNodes)d.copy?c.data=this.getImageData(a):c.image=a;else throw new Error('Invalid image');return this.frames.push(c)},a.prototype.render=function(){var d,a;if(this.running)throw new Error('Already running');if(!(null!=this.options.width&&null!=this.options.height))throw new Error('Width and height must be set prior to rendering');this.running=!0,this.nextFrame=0,this.finishedFrames=0,this.imageParts=function(c){for(var b=function(){var b;b=[];for(var a=0;0<=this.frames.length?a<this.frames.length:a>this.frames.length;0<=this.frames.length?++a:--a)b.push(a);return b}.apply(this,arguments),a=0,e=b.length;a<e;++a)d=b[a],c.push(null);return c}.call(this,[]),a=this.spawnWorkers();for(var c=function(){var c;c=[];for(var b=0;0<=a?b<a:b>a;0<=a?++b:--b)c.push(b);return c}.apply(this,arguments),b=0,e=c.length;b<e;++b)d=c[b],this.renderNextFrame();return this.emit('start'),this.emit('progress',0)},a.prototype.abort=function(){var a;while(!0){if(a=this.activeWorkers.shift(),!(null!=a))break;console.log('killing active worker'),a.terminate()}return this.running=!1,this.emit('abort')},a.prototype.spawnWorkers=function(){var a;return a=Math.min(this.options.workers,this.frames.length),function(){var c;c=[];for(var b=this.freeWorkers.length;this.freeWorkers.length<=a?b<a:b>a;this.freeWorkers.length<=a?++b:--b)c.push(b);return c}.apply(this,arguments).forEach(function(a){return function(c){var b;return console.log('spawning worker '+c),b=new Worker(a.options.workerScript),b.onmessage=function(a){return function(c){return a.activeWorkers.splice(a.activeWorkers.indexOf(b),1),a.freeWorkers.push(b),a.frameFinished(c.data)}}(a),a.freeWorkers.push(b)}}(this)),a},a.prototype.frameFinished=function(a){return console.log('frame '+a.index+' finished - '+this.activeWorkers.length+' active'),this.finishedFrames++,this.emit('progress',this.finishedFrames/this.frames.length),this.imageParts[a.index]=a,j(null,this.imageParts)?this.renderNextFrame():this.finishRendering()},a.prototype.finishRendering=function(){var e,a,k,m,b,d,h;b=0;for(var f=0,j=this.imageParts.length;f<j;++f)a=this.imageParts[f],b+=(a.data.length-1)*a.pageSize+a.cursor;b+=a.pageSize-a.cursor,console.log('rendering finished - filesize '+Math.round(b/1e3)+'kb'),e=new Uint8Array(b),d=0;for(var g=0,l=this.imageParts.length;g<l;++g){a=this.imageParts[g];for(var c=0,i=a.data.length;c<i;++c)h=a.data[c],k=c,e.set(h,d),k===a.data.length-1?d+=a.cursor:d+=a.pageSize}return m=new Blob([e],{type:'image/gif'}),this.emit('finished',m,e)},a.prototype.renderNextFrame=function(){var c,a,b;if(this.freeWorkers.length===0)throw new Error('No free workers');return this.nextFrame>=this.frames.length?void 0:(c=this.frames[this.nextFrame++],b=this.freeWorkers.shift(),a=this.getTask(c),console.log('starting frame '+(a.index+1)+' of '+this.frames.length),this.activeWorkers.push(b),b.postMessage(a))},a.prototype.getContextData=function(a){return a.getImageData(0,0,this.options.width,this.options.height).data},a.prototype.getImageData=function(b){var a;return null!=this._canvas||(this._canvas=document.createElement('canvas'),this._canvas.width=this.options.width,this._canvas.height=this.options.height),a=this._canvas.getContext('2d'),a.setFill=this.options.background,a.fillRect(0,0,this.options.width,this.options.height),a.drawImage(b,0,0),this.getContextData(a)},a.prototype.getTask=function(a){var c,b;if(c=this.frames.indexOf(a),b={index:c,last:c===this.frames.length-1,delay:a.delay,transparent:a.transparent,width:this.options.width,height:this.options.height,quality:this.options.quality,preserveColors:this.options.preserveColors,repeat:this.options.repeat,canTransfer:h.name==='chrome'},null!=a.data)b.data=a.data;else if(null!=a.context)b.data=this.getContextData(a.context);else if(null!=a.image)b.data=this.getImageData(a.image);else throw new Error('Invalid frame');return b},a}(f),d.exports=e}),a.define('/browser.coffee',function(f,g,h,i){var a,d,e,c,b;c=navigator.userAgent.toLowerCase(),e=navigator.platform.toLowerCase(),b=c.match(/(opera|ie|firefox|chrome|version)[\s\/:]([\w\d\.]+)?.*?(safari|version[\s\/:]([\w\d\.]+)|$)/)||[null,'unknown',0],d=b[1]==='ie'&&document.documentMode,a={name:b[1]==='version'?b[3]:b[1],version:d||parseFloat(b[1]==='opera'&&b[4]?b[4]:b[2]),platform:{name:c.match(/ip(?:ad|od|hone)/)?'ios':(c.match(/(?:webos|android)/)||e.match(/mac|win|linux/)||['other'])[0]}},a[a.name]=!0,a[a.name+parseInt(a.version,10)]=!0,a.platform[a.platform.name]=!0,f.exports=a}),a.define('events',function(f,e,g,h){b.EventEmitter||(b.EventEmitter=function(){});var a=e.EventEmitter=b.EventEmitter,c=typeof Array.isArray==='function'?Array.isArray:function(a){return Object.prototype.toString.call(a)==='[object Array]'},d=10;a.prototype.setMaxListeners=function(a){this._events||(this._events={}),this._events.maxListeners=a},a.prototype.emit=function(f){if(f==='error'&&(!(this._events&&this._events.error)||c(this._events.error)&&!this._events.error.length))throw arguments[1]instanceof Error?arguments[1]:new Error("Uncaught, unspecified 'error' event.");if(!this._events)return!1;var a=this._events[f];if(!a)return!1;if(!(typeof a=='function'))if(c(a)){var b=Array.prototype.slice.call(arguments,1),e=a.slice();for(var d=0,g=e.length;d<g;d++)e[d].apply(this,b);return!0}else return!1;switch(arguments.length){case 1:a.call(this);break;case 2:a.call(this,arguments[1]);break;case 3:a.call(this,arguments[1],arguments[2]);break;default:var b=Array.prototype.slice.call(arguments,1);a.apply(this,b)}return!0},a.prototype.addListener=function(a,b){if('function'!==typeof b)throw new Error('addListener only takes instances of Function');if(this._events||(this._events={}),this.emit('newListener',a,b),!this._events[a])this._events[a]=b;else if(c(this._events[a])){if(!this._events[a].warned){var e;this._events.maxListeners!==undefined?e=this._events.maxListeners:e=d,e&&e>0&&this._events[a].length>e&&(this._events[a].warned=!0,console.error('(node) warning: possible EventEmitter memory leak detected. %d listeners added. Use emitter.setMaxListeners() to increase limit.',this._events[a].length),console.trace())}this._events[a].push(b)}else this._events[a]=[this._events[a],b];return this},a.prototype.on=a.prototype.addListener,a.prototype.once=function(b,c){var a=this;return a.on(b,function d(){a.removeListener(b,d),c.apply(this,arguments)}),this},a.prototype.removeListener=function(a,d){if('function'!==typeof d)throw new Error('removeListener only takes instances of Function');if(!(this._events&&this._events[a]))return this;var b=this._events[a];if(c(b)){var e=b.indexOf(d);if(e<0)return this;b.splice(e,1),b.length==0&&delete this._events[a]}else this._events[a]===d&&delete this._events[a];return this},a.prototype.removeAllListeners=function(a){return a&&this._events&&this._events[a]&&(this._events[a]=null),this},a.prototype.listeners=function(a){return this._events||(this._events={}),this._events[a]||(this._events[a]=[]),c(this._events[a])||(this._events[a]=[this._events[a]]),this._events[a]}}),c.GIF=a('/gif.coffee')}.call(this,this))
+;(function(c){function a(b,d){if({}.hasOwnProperty.call(a.cache,b))return a.cache[b];var e=a.resolve(b);if(!e)throw new Error('Failed to resolve module '+b);var c={id:b,require:a,filename:b,exports:{},loaded:!1,parent:d,children:[]};d&&d.children.push(c);var f=b.slice(0,b.lastIndexOf('/')+1);return a.cache[b]=c.exports,e.call(c.exports,c,c.exports,f,b),c.loaded=!0,a.cache[b]=c.exports}a.modules={},a.cache={},a.resolve=function(b){return{}.hasOwnProperty.call(a.modules,b)?a.modules[b]:void 0},a.define=function(b,c){a.modules[b]=c};var b=function(a){return a='/',{title:'browser',version:'v0.8.19',browser:!0,env:{},argv:[],nextTick:c.setImmediate||function(a){setTimeout(a,0)},cwd:function(){return a},chdir:function(b){a=b}}}();a.define('/gif.coffee',function(d,m,l,k){function g(a,b){return{}.hasOwnProperty.call(a,b)}function j(d,b){for(var a=0,c=b.length;a<c;++a)if(a in b&&b[a]===d)return!0;return!1}function i(a,b){function d(){this.constructor=a}for(var c in b)g(b,c)&&(a[c]=b[c]);return d.prototype=b.prototype,a.prototype=new d,a.__super__=b.prototype,a}var h,c,f,b,e;f=a('events',d).EventEmitter,h=a('/browser.coffee',d),e=function(d){function a(d){var a,b;this.running=!1,this.options={},this.frames=[],this.freeWorkers=[],this.activeWorkers=[],this.setOptions(d);for(a in c)b=c[a],null!=this.options[a]?this.options[a]:this.options[a]=b}return i(a,d),c={workerScript:window.GifWorkerURL,workers:2,repeat:0,background:'#fff',quality:10,width:null,height:null,transparent:null,preserveColors:!1},b={delay:500,copy:!1},a.prototype.setOption=function(a,b){return this.options[a]=b,null!=this._canvas&&(a==='width'||a==='height')?this._canvas[a]=b:void 0},a.prototype.setOptions=function(b){var a,c;return function(d){for(a in b){if(!g(b,a))continue;c=b[a],d.push(this.setOption(a,c))}return d}.call(this,[])},a.prototype.addFrame=function(a,d){var c,e;null==d&&(d={}),c={},c.transparent=this.options.transparent;for(e in b)c[e]=d[e]||b[e];if(null!=this.options.width||this.setOption('width',a.width),null!=this.options.height||this.setOption('height',a.height),'undefined'!==typeof ImageData&&null!=ImageData&&a instanceof ImageData)c.data=a.data;else if('undefined'!==typeof CanvasRenderingContext2D&&null!=CanvasRenderingContext2D&&a instanceof CanvasRenderingContext2D||'undefined'!==typeof WebGLRenderingContext&&null!=WebGLRenderingContext&&a instanceof WebGLRenderingContext)d.copy?c.data=this.getContextData(a):c.context=a;else if(null!=a.childNodes)d.copy?c.data=this.getImageData(a):c.image=a;else throw new Error('Недопустимое изображение');return this.frames.push(c)},a.prototype.render=function(){var d,a;if(this.running)throw new Error('Already running');if(!(null!=this.options.width&&null!=this.options.height))throw new Error('Width and height must be set prior to rendering');this.running=!0,this.nextFrame=0,this.finishedFrames=0,this.imageParts=function(c){for(var b=function(){var b;b=[];for(var a=0;0<=this.frames.length?a<this.frames.length:a>this.frames.length;0<=this.frames.length?++a:--a)b.push(a);return b}.apply(this,arguments),a=0,e=b.length;a<e;++a)d=b[a],c.push(null);return c}.call(this,[]),a=this.spawnWorkers();for(var c=function(){var c;c=[];for(var b=0;0<=a?b<a:b>a;0<=a?++b:--b)c.push(b);return c}.apply(this,arguments),b=0,e=c.length;b<e;++b)d=c[b],this.renderNextFrame();return this.emit('start'),this.emit('progress',0)},a.prototype.abort=function(){var a;while(!0){if(a=this.activeWorkers.shift(),!(null!=a))break;console.log('killing active worker'),a.terminate()}return this.running=!1,this.emit('abort')},a.prototype.spawnWorkers=function(){var a;return a=Math.min(this.options.workers,this.frames.length),function(){var c;c=[];for(var b=this.freeWorkers.length;this.freeWorkers.length<=a?b<a:b>a;this.freeWorkers.length<=a?++b:--b)c.push(b);return c}.apply(this,arguments).forEach(function(a){return function(c){var b;return console.log('spawning worker '+c),b=new Worker(a.options.workerScript),b.onmessage=function(a){return function(c){return a.activeWorkers.splice(a.activeWorkers.indexOf(b),1),a.freeWorkers.push(b),a.frameFinished(c.data)}}(a),a.freeWorkers.push(b)}}(this)),a},a.prototype.frameFinished=function(a){return console.log('frame '+a.index+' finished - '+this.activeWorkers.length+' active'),this.finishedFrames++,this.emit('progress',this.finishedFrames/this.frames.length),this.imageParts[a.index]=a,j(null,this.imageParts)?this.renderNextFrame():this.finishRendering()},a.prototype.finishRendering=function(){var e,a,k,m,b,d,h;b=0;for(var f=0,j=this.imageParts.length;f<j;++f)a=this.imageParts[f],b+=(a.data.length-1)*a.pageSize+a.cursor;b+=a.pageSize-a.cursor,console.log('rendering finished - filesize '+Math.round(b/1e3)+'kb'),e=new Uint8Array(b),d=0;for(var g=0,l=this.imageParts.length;g<l;++g){a=this.imageParts[g];for(var c=0,i=a.data.length;c<i;++c)h=a.data[c],k=c,e.set(h,d),k===a.data.length-1?d+=a.cursor:d+=a.pageSize}return m=new Blob([e],{type:'image/gif'}),this.emit('finished',m,e)},a.prototype.renderNextFrame=function(){var c,a,b;if(this.freeWorkers.length===0)throw new Error('No free workers');return this.nextFrame>=this.frames.length?void 0:(c=this.frames[this.nextFrame++],b=this.freeWorkers.shift(),a=this.getTask(c),console.log('starting frame '+(a.index+1)+' of '+this.frames.length),this.activeWorkers.push(b),b.postMessage(a))},a.prototype.getContextData=function(a){return a.getImageData(0,0,this.options.width,this.options.height).data},a.prototype.getImageData=function(b){var a;return null!=this._canvas||(this._canvas=document.createElement('canvas'),this._canvas.width=this.options.width,this._canvas.height=this.options.height),a=this._canvas.getContext('2d'),a.setFill=this.options.background,a.fillRect(0,0,this.options.width,this.options.height),a.drawImage(b,0,0),this.getContextData(a)},a.prototype.getTask=function(a){var c,b;if(c=this.frames.indexOf(a),b={index:c,last:c===this.frames.length-1,delay:a.delay,transparent:a.transparent,width:this.options.width,height:this.options.height,quality:this.options.quality,preserveColors:this.options.preserveColors,repeat:this.options.repeat,canTransfer:h.name==='chrome'},null!=a.data)b.data=a.data;else if(null!=a.context)b.data=this.getContextData(a.context);else if(null!=a.image)b.data=this.getImageData(a.image);else throw new Error('Invalid frame');return b},a}(f),d.exports=e}),a.define('/browser.coffee',function(f,g,h,i){var a,d,e,c,b;c=navigator.userAgent.toLowerCase(),e=navigator.platform.toLowerCase(),b=c.match(/(opera|ie|firefox|chrome|version)[\s\/:]([\w\d\.]+)?.*?(safari|version[\s\/:]([\w\d\.]+)|$)/)||[null,'unknown',0],d=b[1]==='ie'&&document.documentMode,a={name:b[1]==='version'?b[3]:b[1],version:d||parseFloat(b[1]==='opera'&&b[4]?b[4]:b[2]),platform:{name:c.match(/ip(?:ad|od|hone)/)?'ios':(c.match(/(?:webos|android)/)||e.match(/mac|win|linux/)||['other'])[0]}},a[a.name]=!0,a[a.name+parseInt(a.version,10)]=!0,a.platform[a.platform.name]=!0,f.exports=a}),a.define('events',function(f,e,g,h){b.EventEmitter||(b.EventEmitter=function(){});var a=e.EventEmitter=b.EventEmitter,c=typeof Array.isArray==='function'?Array.isArray:function(a){return Object.prototype.toString.call(a)==='[object Array]'},d=10;a.prototype.setMaxListeners=function(a){this._events||(this._events={}),this._events.maxListeners=a},a.prototype.emit=function(f){if(f==='error'&&(!(this._events&&this._events.error)||c(this._events.error)&&!this._events.error.length))throw arguments[1]instanceof Error?arguments[1]:new Error("Uncaught, unspecified 'error' event.");if(!this._events)return!1;var a=this._events[f];if(!a)return!1;if(!(typeof a=='function'))if(c(a)){var b=Array.prototype.slice.call(arguments,1),e=a.slice();for(var d=0,g=e.length;d<g;d++)e[d].apply(this,b);return!0}else return!1;switch(arguments.length){case 1:a.call(this);break;case 2:a.call(this,arguments[1]);break;case 3:a.call(this,arguments[1],arguments[2]);break;default:var b=Array.prototype.slice.call(arguments,1);a.apply(this,b)}return!0},a.prototype.addListener=function(a,b){if('function'!==typeof b)throw new Error('addListener only takes instances of Function');if(this._events||(this._events={}),this.emit('newListener',a,b),!this._events[a])this._events[a]=b;else if(c(this._events[a])){if(!this._events[a].warned){var e;this._events.maxListeners!==undefined?e=this._events.maxListeners:e=d,e&&e>0&&this._events[a].length>e&&(this._events[a].warned=!0,console.error('(node) warning: possible EventEmitter memory leak detected. %d listeners added. Use emitter.setMaxListeners() to increase limit.',this._events[a].length),console.trace())}this._events[a].push(b)}else this._events[a]=[this._events[a],b];return this},a.prototype.on=a.prototype.addListener,a.prototype.once=function(b,c){var a=this;return a.on(b,function d(){a.removeListener(b,d),c.apply(this,arguments)}),this},a.prototype.removeListener=function(a,d){if('function'!==typeof d)throw new Error('removeListener only takes instances of Function');if(!(this._events&&this._events[a]))return this;var b=this._events[a];if(c(b)){var e=b.indexOf(d);if(e<0)return this;b.splice(e,1),b.length==0&&delete this._events[a]}else this._events[a]===d&&delete this._events[a];return this},a.prototype.removeAllListeners=function(a){return a&&this._events&&this._events[a]&&(this._events[a]=null),this},a.prototype.listeners=function(a){return this._events||(this._events={}),this._events[a]||(this._events[a]=[]),c(this._events[a])||(this._events[a]=[this._events[a]]),this._events[a]}}),c.GIF=a('/gif.coffee')}.call(this,this))
 //# sourceMappingURL=gif.js.map
 // gif.js 0.1.6 - https://github.com/jnordberg/gif.js
 ;( function( window ) { 'use strict';
@@ -24082,7 +24082,7 @@ return Q;
     cloneFrameButton.setAttribute("data-placement", "right");
     cloneFrameButton.setAttribute("data-tile-number", tileNumber);
     cloneFrameButton.setAttribute("data-tile-action", ACTION.CLONE);
-    cloneFrameButton.setAttribute("title", "Duplicate this frame");
+    cloneFrameButton.setAttribute("title", "Дублировать этот кадр");
     cloneFrameButton.className =
       "tile-overlay duplicate-frame-action icon-frame-duplicate-white";
     cloneFrameButton.setAttribute("data-test-id", "duplicate-frame-button");
@@ -24092,7 +24092,7 @@ return Q;
     var deleteButton = document.createElement("button");
     deleteButton.setAttribute("rel", "tooltip");
     deleteButton.setAttribute("data-placement", "right");
-    deleteButton.setAttribute("title", "Delete this frame");
+    deleteButton.setAttribute("title", "Удалить этот кадр");
     deleteButton.setAttribute("data-tile-number", tileNumber);
     deleteButton.setAttribute("data-tile-action", ACTION.DELETE);
     deleteButton.className =
@@ -24304,7 +24304,7 @@ return Q;
 
   ns.LayersListController.prototype.initToggleLayerPreview_ = function () {
     var descriptors = [{ description: "Opacity defined in PREFERENCES" }];
-    var helpText = "Preview all layers";
+    var helpText = "Предпросмотр всех слоёв";
 
     pskl.app.shortcutService.registerShortcut(
       this.layerPreviewShortcut,
@@ -24439,7 +24439,7 @@ return Q;
       index = pskl.utils.Dom.getData(el, "layerIndex");
       var layer = this.piskelController.getLayerAt(parseInt(index, 10));
       var opacity = window.prompt(
-        "Set layer opacity (value between 0 and 1)",
+        "Задать прозрачность слоя (значение от 0 до 1)",
         layer.getOpacity()
       );
       this.piskelController.setLayerOpacityAt(index, opacity);
@@ -24526,7 +24526,7 @@ return Q;
 ;(function () {
   var ns = $.namespace("pskl.controller.preview");
 
-  var POPUP_TITLE = "Piskel - preview";
+  var POPUP_TITLE = "Piskel — предпросмотр";
 
   ns.PopupPreviewController = function (piskelController) {
     this.piskelController = piskelController;
@@ -24651,17 +24651,17 @@ return Q;
       original: {
         button: document.querySelector(".original-size-button"),
         shortcut: pskl.service.keyboard.Shortcuts.MISC.X1_PREVIEW,
-        tooltip: "Original size preview"
+        tooltip: "Предпросмотр в исходном размере"
       },
       best: {
         button: document.querySelector(".best-size-button"),
         shortcut: pskl.service.keyboard.Shortcuts.MISC.BEST_PREVIEW,
-        tooltip: "Best size preview"
+        tooltip: "Предпросмотр в оптимальном размере"
       },
       full: {
         button: document.querySelector(".full-size-button"),
         shortcut: pskl.service.keyboard.Shortcuts.MISC.FULL_PREVIEW,
-        tooltip: "Full size preview"
+        tooltip: "Предпросмотр в полном размере"
       }
     };
     this.toggleOnionSkinButton = document.querySelector(
@@ -24696,7 +24696,7 @@ return Q;
     registerShortcut(this.toggleGridShortcut, this.toggleGrid_.bind(this));
 
     var onionSkinTooltip = pskl.utils.TooltipFormatter.format(
-      "Toggle onion skin",
+      "Переключить кальку",
       this.onionSkinShortcut
     );
     this.toggleOnionSkinButton.setAttribute("title", onionSkinTooltip);
@@ -24773,13 +24773,13 @@ return Q;
 
       var validSizes;
       if (fullZoom < 1) {
-        this.disablePreviewSizeWidget_("No other option available");
+        this.disablePreviewSizeWidget_("Другие параметры недоступны");
         validSizes = ["full"];
       } else if (fullZoom === 1) {
-        this.disablePreviewSizeWidget_("No other option available");
+        this.disablePreviewSizeWidget_("Другие параметры недоступны");
         validSizes = ["original"];
       } else if (seamlessModeEnabled) {
-        this.disablePreviewSizeWidget_("Disabled in tile mode");
+        this.disablePreviewSizeWidget_("Отключено в режиме тайлов");
         validSizes = ["original"];
       } else {
         this.enablePreviewSizeWidget_();
@@ -26006,7 +26006,7 @@ return Q;
     message.className = "user-message";
     message.innerHTML = messageInfo.content;
     message.innerHTML =
-      message.innerHTML + '<div title="Close message" class="close">x</div>';
+      message.innerHTML + '<div title="Закрыть сообщение" class="close">x</div>';
     document.body.appendChild(message);
 
     message
@@ -26220,10 +26220,10 @@ return Q;
       $.publish(Events.SHOW_NOTIFICATION, [
         {
           content:
-            "Performance problem detected, " +
+            "Обнаружена проблема производительности, " +
             '<a href="#" style="color:red;"' +
             'onclick="pskl.controller.UserWarningController.showPerformanceInfoDialog()">' +
-            "learn more?</a>",
+            "подробнее?</a>",
           hideDelay: 5000
         }
       ]);
@@ -26748,7 +26748,7 @@ return Q;
       });
     }
 
-    $.publish(Events.SHOW_PROGRESS, [{ name: "Building animated GIF ..." }]);
+    $.publish(Events.SHOW_PROGRESS, [{ name: "Создание анимированного GIF ..." }]);
     gif.on(
       "progress",
       function (percentage) {
@@ -26776,7 +26776,7 @@ return Q;
 
     if (!transparentColor) {
       console.error(
-        "Unable to find unused color to use as transparent color in the current sprite"
+        "Не удалось найти неиспользуемый цвет для прозрачности в текущем спрайте"
       );
       transparentColor = MAGIC_PINK;
     }
@@ -26801,7 +26801,7 @@ return Q;
 
   var replace = pskl.utils.Template.replace;
 
-  // Helper to return "X items" or "1 item" if X is 1.
+  // Helper to return "X элементов" or "1 элемент" if X is 1.
   var pluralize = function (word, count) {
     if (count === 1) {
       return "1 " + word;
@@ -27889,7 +27889,7 @@ return Q;
       this.closeDrawer_();
     } else {
       this.closeDrawer_();
-      console.error("The selected file is not a piskel file");
+      console.error("Выбранный файл не является файлом piskel");
     }
   };
 
@@ -27909,7 +27909,7 @@ return Q;
       this.closeDrawer_();
     } else {
       this.closeDrawer_();
-      console.error("Some files are not images");
+      console.error("Некоторые файлы не являются изображениями");
     }
   };
 
@@ -27918,7 +27918,7 @@ return Q;
   };
 
   ns.ImportController.prototype.onRestorePreviousSessionClick_ = function () {
-    if (window.confirm("This will erase your current workspace. Continue ?")) {
+    if (window.confirm("Это очистит текущую рабочую область. Продолжить?")) {
       pskl.app.backupService.load();
       $.publish(Events.CLOSE_SETTINGS_DRAWER);
     }
@@ -28154,24 +28154,24 @@ return Q;
       paletteId == Constants.CURRENT_COLORS_PALETTE_ID;
     if (paletteId && !isCurrentColorsPalette) {
       importFileButton.style.display = "none";
-      this.setTitle("Edit Palette");
+      this.setTitle("Редактировать палитру");
 
       var paletteObject = this.paletteService.getPaletteById(paletteId);
       palette = pskl.model.Palette.fromObject(paletteObject);
     } else {
       downloadButton.style.display = "none";
       deleteButton.style.display = "none";
-      this.setTitle("Create Palette");
+      this.setTitle("Создать палитру");
 
       var uuid = pskl.utils.Uuid.generate();
       if (isCurrentColorsPalette) {
         palette = new pskl.model.Palette(
           uuid,
-          "Current colors clone",
+          "Копия текущих цветов",
           this.getCurrentColors_()
         );
       } else {
-        palette = new pskl.model.Palette(uuid, "New palette", []);
+        palette = new pskl.model.Palette(uuid, "Новая палитра", []);
       }
     }
 
@@ -28220,7 +28220,7 @@ return Q;
   ns.CreatePaletteController.prototype.deletePalette_ = function () {
     if (
       window.confirm(
-        "Are you sure you want to delete palette " + this.palette.name
+        "Вы уверены, что хотите удалить палитру " + this.palette.name
       )
     ) {
       this.paletteService.deletePaletteById(this.palette.id);
@@ -28263,7 +28263,7 @@ return Q;
   ns.CreatePaletteController.prototype.displayErrorMessage_ = function (
     message
   ) {
-    message = "Could not import palette : " + message;
+    message = "Не удалось импортировать палитру: " + message;
     $.publish(Events.SHOW_NOTIFICATION, [
       {
         content: message
@@ -28305,14 +28305,14 @@ return Q;
     var action = evt.target.getAttribute("data-action");
     var name = evt.target.getAttribute("data-name");
     if (action === "load") {
-      if (window.confirm("This will erase your current piskel. Continue ?")) {
+      if (window.confirm("Это удалит текущий piskel. Продолжить?")) {
         this.service_.load(name);
         this.closeDialog();
       }
     } else if (action === "delete") {
       if (
         window.confirm(
-          "This will permanently DELETE this piskel from your computer. Continue ?"
+          "Этот piskel будет навсегда УДАЛЁН с вашего компьютера. Продолжить?"
         )
       ) {
         this.service_.remove(name);
@@ -28405,7 +28405,7 @@ return Q;
   ns.CheatsheetController.prototype.onRestoreDefaultsClick_ = function () {
     if (
       window.confirm(
-        "Replace all custom shortcuts by the default Piskel shortcuts ?"
+        "Заменить все пользовательские горячие клавиши стандартными клавишами Piskel?"
       )
     ) {
       pskl.app.shortcutService.restoreDefaultShortcuts();
@@ -28536,8 +28536,8 @@ return Q;
     }
 
     var title = shortcut.isEditable()
-      ? "Click to edit the key"
-      : "Shortcut cannot be remapped";
+      ? "Нажмите, чтобы изменить клавишу"
+      : "Горячую клавишу нельзя переназначить";
 
     var markup = pskl.utils.Template.replace(shortcutTemplate, {
       id: shortcut.getId(),
@@ -28570,10 +28570,10 @@ return Q;
 
   ns.CheatsheetController.prototype.getHelptextTitle_ = function () {
     var helpItems = [
-      "Click on a shortcut to change the key.",
-      "When the shortcut blinks, press the key on your keyboard to assign it.",
-      "White shortcuts can not be edited.",
-      "Click on 'Restore default shortcuts' to erase all custom shortcuts."
+      "Нажмите на сочетание, чтобы изменить клавишу.",
+      "Когда сочетание мигает, нажмите клавишу на клавиатуре, чтобы назначить её.",
+      "Белые сочетания нельзя редактировать.",
+      "Нажмите 'Восстановить сочетания по умолчанию', чтобы удалить все пользовательские сочетания."
     ];
 
     var helptextTitle = helpItems.reduce(function (p, n) {
@@ -28661,7 +28661,7 @@ return Q;
           session.endDate,
           "the {{Y}}/{{M}}/{{D}} at {{H}}:{{m}}"
         ),
-        count: session.count === 1 ? "1 snapshot" : session.count + " snapshots"
+        count: session.count === 1 ? "1 снимок" : session.count + " снимков"
       };
       return previous + pskl.utils.Template.replace(sessionItemTemplate, view);
     }, "");
@@ -28682,7 +28682,7 @@ return Q;
       this.backupsController.backupsData.selectedSession = sessionId;
       this.backupsController.next();
     } else if (action == "delete") {
-      if (window.confirm("Are you sure you want to delete this session?")) {
+      if (window.confirm("Вы уверены, что хотите удалить этот сеанс?")) {
         evt.target.closest(".session-item").classList.add("deleting");
         Q.all([
           pskl.app.backupService.deleteSession(sessionId),
@@ -28757,7 +28757,7 @@ return Q;
     if (snapshots.length === 0) {
       // This should normally never happen, all sessions have at least one snapshot and snapshots
       // can not be individually deleted.
-      console.warn("Could not retrieve snapshots for a session");
+      console.warn("Не удалось получить снимки сеанса");
       return pskl.utils.Template.get("snapshot-list-empty");
     }
 
@@ -28771,7 +28771,7 @@ return Q;
           snapshot.date,
           "the {{Y}}/{{M}}/{{D}} at {{H}}:{{m}}"
         ),
-        frames: snapshot.frames === 1 ? "1 frame" : snapshot.frames + " frames",
+        frames: snapshot.frames === 1 ? "1 кадр" : snapshot.frames + " кадров",
         resolution: pskl.utils.StringUtils.formatSize(
           snapshot.width,
           snapshot.height
@@ -29078,14 +29078,14 @@ return Q;
     if (isBigger && keep) {
       anchorInfo.innerHTML = [
         '<div class="import-resize-warning">',
-        "  Imported content will be cropped!",
+        "  Импортируемое содержимое будет обрезано!",
         "</div>",
-        "Select crop anchor:"
+        "Выберите якорь обрезки:"
       ].join("");
     } else if (isBigger) {
-      anchorInfo.innerHTML = "Select resize anchor:";
+      anchorInfo.innerHTML = "Выберите якорь изменения размера:";
     } else {
-      anchorInfo.innerHTML = "Select position anchor:";
+      anchorInfo.innerHTML = "Выберите якорь позиции:";
     }
   };
 
@@ -29626,7 +29626,7 @@ return Q;
       );
     } else {
       console.error(
-        "Unsupported import. Only single piskel or single image are supported at the moment."
+        "Импорт не поддерживается. Сейчас поддерживается только один piskel или одно изображение."
       );
       this.closeDialog();
     }
@@ -31176,7 +31176,7 @@ return Q;
     saveAsNew
   ) {
     if (this.savingFlag_) {
-      return Q.reject("Already saving");
+      return Q.reject("Сохранение уже выполняется");
     }
 
     $.publish(Events.BEFORE_SAVING_PISKEL);
@@ -31221,7 +31221,7 @@ return Q;
   ns.StorageService.prototype.onSaveSuccess_ = function () {
     $.publish(Events.SHOW_NOTIFICATION, [
       {
-        content: "Successfully saved !",
+        content: "Успешно сохранено!",
         hideDelay: 3000
       }
     ]);
@@ -31230,7 +31230,7 @@ return Q;
   };
 
   ns.StorageService.prototype.onSaveError_ = function (errorMessage) {
-    var errorText = "Saving failed";
+    var errorText = "Не удалось сохранить";
     if (errorMessage) {
       errorText += " : " + errorMessage;
     }
@@ -31296,7 +31296,7 @@ return Q;
   ns.IndexedDbStorageService.prototype.init = function () {
     this.piskelDatabase.init().catch(function (e) {
       console.log(
-        "Failed to initialize PiskelDatabase, local browser saves will be unavailable."
+        "Не удалось инициализировать PiskelDatabase, локальные сохранения в браузере будут недоступны."
       );
     });
   };
@@ -31380,7 +31380,7 @@ return Q;
     var serialized = pskl.utils.serialization.Serializer.serialize(piskel);
     if (pskl.app.localStorageService.getPiskel(name)) {
       var confirmOverwrite = window.confirm(
-        "There is already a piskel saved as " + name + ". Overwrite ?"
+        "Уже есть piskel, сохранённый как " + name + ". Перезаписать?"
       );
       if (!confirmOverwrite) {
         return Q.reject('Cancelled by user, "' + name + '" already exists');
@@ -31487,7 +31487,7 @@ return Q;
 
     if (serialized.length > Constants.APPENGINE_SAVE_LIMIT) {
       deferred.reject(
-        "This sprite is too big to be saved on the gallery. Try saving it as a .piskel file."
+        "Этот спрайт слишком большой для сохранения в галерее. Попробуйте сохранить его как файл .piskel."
       );
     }
 
@@ -31516,15 +31516,15 @@ return Q;
   ns.GalleryStorageService.prototype.getErrorMessage_ = function (response) {
     var errorMessage = "";
     if (response.status === 401) {
-      errorMessage = "Session expired, please log in again.";
+      errorMessage = "Сеанс истёк, войдите снова.";
     } else if (response.status === 403) {
       errorMessage =
-        "Unauthorized action, this sprite belongs to another account.";
+        "Действие не разрешено, этот спрайт принадлежит другой учётной записи.";
     } else if (response.status === 500) {
       errorMessage =
-        "Unexpected server error, please contact us on Github (piskel) or Twitter (@piskelapp)";
+        "Неожиданная ошибка сервера, свяжитесь с нами на GitHub (piskel) или Twitter (@piskelapp)";
     } else {
-      errorMessage = "Unknown error";
+      errorMessage = "Неизвестная ошибка";
     }
     return errorMessage;
   };
@@ -31555,7 +31555,7 @@ return Q;
 
   ns.DesktopStorageService.prototype.saveAtPath_ = function (piskel, savePath) {
     if (!savePath) {
-      return Q.reject("Invalid file name");
+      return Q.reject("Недопустимое имя файла");
     }
 
     var serialized = pskl.utils.serialization.Serializer.serialize(piskel);
@@ -31819,7 +31819,7 @@ return Q;
     pskl.app.backupService.backup();
     if (pskl.app.savedStatusService.isDirty()) {
       var confirmationMessage =
-        "Your current sprite has unsaved changes. Are you sure you want to quit?";
+        "В текущем спрайте есть несохранённые изменения. Вы уверены, что хотите выйти?";
 
       evt = evt || window.event;
       if (evt) {
@@ -32181,7 +32181,7 @@ return Q;
   var ns = $.namespace("pskl.service.palette");
 
   ns.CurrentColorsPalette = function () {
-    this.name = "Current colors";
+    this.name = "Текущие цвета";
     this.id = Constants.CURRENT_COLORS_PALETTE_ID;
     this.colorSorter = new pskl.service.color.ColorSorter();
   };
@@ -32229,7 +32229,7 @@ return Q;
     this.savePalettes_(palettes);
 
     $.publish(Events.SHOW_NOTIFICATION, [
-      { content: "Palette " + palette.name + " successfully saved !" }
+      { content: "Палитра " + palette.name + " успешно сохранена!" }
     ]);
     window.setTimeout($.publish.bind($, Events.HIDE_NOTIFICATION), 2000);
   };
@@ -32413,7 +32413,7 @@ return Q;
       this.onWorkerError_.bind(this)
     );
 
-    $.publish(Events.SHOW_PROGRESS, [{ name: "Processing image colors ..." }]);
+    $.publish(Events.SHOW_PROGRESS, [{ name: "Обработка цветов изображения ..." }]);
 
     imageProcessor.process();
   };
@@ -32425,7 +32425,7 @@ return Q;
     var colors = Object.keys(colorsMap);
 
     if (colors.length > Constants.MAX_PALETTE_COLORS) {
-      this.onError("Too many colors : " + colors.length);
+      this.onError("Слишком много цветов: " + colors.length);
     } else {
       var uuid = pskl.utils.Uuid.generate();
       var sortedColors = this.colorSorter_.sort(colors);
@@ -32447,7 +32447,7 @@ return Q;
 
   ns.PaletteImageReader.prototype.onWorkerError_ = function (event) {
     $.publish(Events.HIDE_PROGRESS);
-    this.onError("Unable to process the image : " + event.data.message);
+    this.onError("Не удалось обработать изображение: " + event.data.message);
   };
 })();
 ;(function () {
@@ -32944,85 +32944,85 @@ return Q;
      * Syntax : createShortcut(id, description, default key(s))
      */
     TOOL: {
-      PEN: createShortcut("tool-pen", "Pen tool", "P"),
+      PEN: createShortcut("tool-pen", "Перо", "P"),
       MIRROR_PEN: createShortcut(
         "tool-vertical-mirror-pen",
-        "Vertical mirror pen tool",
+        "Вертикальное зеркальное перо",
         "V"
       ),
       PAINT_BUCKET: createShortcut(
         "tool-paint-bucket",
-        "Paint bucket tool",
+        "Заливка",
         "B"
       ),
-      COLORSWAP: createShortcut("tool-colorswap", "Magic bucket tool", "A"),
-      ERASER: createShortcut("tool-eraser", "Eraser pen tool", "E"),
-      STROKE: createShortcut("tool-stroke", "Stroke tool", "L"),
-      RECTANGLE: createShortcut("tool-rectangle", "Rectangle tool", "R"),
-      CIRCLE: createShortcut("tool-circle", "Circle tool", "C"),
-      MOVE: createShortcut("tool-move", "Move tool", "M"),
-      SHAPE_SELECT: createShortcut("tool-shape-select", "Shape selection", "Z"),
+      COLORSWAP: createShortcut("tool-colorswap", "Волшебная заливка", "A"),
+      ERASER: createShortcut("tool-eraser", "Ластик", "E"),
+      STROKE: createShortcut("tool-stroke", "Линия", "L"),
+      RECTANGLE: createShortcut("tool-rectangle", "Прямоугольник", "R"),
+      CIRCLE: createShortcut("tool-circle", "Круг", "C"),
+      MOVE: createShortcut("tool-move", "Перемещение", "M"),
+      SHAPE_SELECT: createShortcut("tool-shape-select", "Выделение формы", "Z"),
       RECTANGLE_SELECT: createShortcut(
         "tool-rectangle-select",
-        "Rectangle selection",
+        "Прямоугольное выделение",
         "S"
       ),
-      LASSO_SELECT: createShortcut("tool-lasso-select", "Lasso selection", "H"),
-      LIGHTEN: createShortcut("tool-lighten", "Lighten tool", "U"),
-      DITHERING: createShortcut("tool-dithering", "Dithering tool", "T"),
-      COLORPICKER: createShortcut("tool-colorpicker", "Color picker", "O")
+      LASSO_SELECT: createShortcut("tool-lasso-select", "Выделение лассо", "H"),
+      LIGHTEN: createShortcut("tool-lighten", "Осветление", "U"),
+      DITHERING: createShortcut("tool-dithering", "Дизеринг", "T"),
+      COLORPICKER: createShortcut("tool-colorpicker", "Пипетка", "O")
     },
 
     SELECTION: {
-      CUT: createShortcut("selection-cut", "Cut selection", "ctrl+X"),
-      COPY: createShortcut("selection-copy", "Copy selection", "ctrl+C"),
-      PASTE: createShortcut("selection-paste", "Paste selection", "ctrl+V"),
-      DELETE: createShortcut("selection-delete", "Delete selection", [
+      CUT: createShortcut("selection-cut", "Вырезать выделение", "ctrl+X"),
+      COPY: createShortcut("selection-copy", "Копировать выделение", "ctrl+C"),
+      PASTE: createShortcut("selection-paste", "Вставить выделение", "ctrl+V"),
+      DELETE: createShortcut("selection-delete", "Удалить выделение", [
         "DEL",
         "BACK"
       ]),
-      COMMIT: createShortcut("selection-commit", "Commit selection", ["ENTER"])
+      COMMIT: createShortcut("selection-commit", "Применить выделение", ["ENTER"])
     },
 
     MISC: {
-      RESET_ZOOM: createShortcut("reset-zoom", "Reset zoom level", "0"),
+      RESET_ZOOM: createShortcut("reset-zoom", "Сбросить масштаб", "0"),
       INCREASE_ZOOM: createShortcut(
         "increase-zoom",
-        "Increase zoom level",
+        "Увеличить масштаб",
         "+"
       ),
       DECREASE_ZOOM: createShortcut(
         "decrease-zoom",
-        "Decrease zoom level",
+        "Уменьшить масштаб",
         "-"
       ),
       INCREASE_PENSIZE: createShortcut(
         "increase-pensize",
-        "Increase pen size",
+        "Увеличить размер пера",
         "]"
       ),
       DECREASE_PENSIZE: createShortcut(
         "decrease-pensize",
-        "Decrease pen size",
+        "Уменьшить размер пера",
         "["
       ),
       UNDO: createShortcut("undo", "Undo", "ctrl+Z"),
       REDO: createShortcut("redo", "Redo", ["ctrl+Y", "ctrl+shift+Z"]),
       PREVIOUS_FRAME: createShortcut(
         "previous-frame",
-        "Select previous frame",
+        "Выбрать предыдущий кадр",
         "up"
       ),
-      NEXT_FRAME: createShortcut("next-frame", "Select next frame", "down"),
-      NEW_FRAME: createShortcut("new-frame", "Create new empty frame", "N"),
+      NEXT_FRAME: createShortcut("next-frame", "Выбрать следующий кадр", "down"),
+      NEW_FRAME: createShortcut("new-frame", "Создать новый пустой кадр", "N"),
       DUPLICATE_FRAME: createShortcut(
         "duplicate-frame",
-        "Duplicate selected frame",
+        "Дублировать выбранный кадр",
         "shift+N"
       ),
       CHEATSHEET: createShortcut(
         "cheatsheet",
-        "Open the keyboard shortcut cheatsheet",
+        "Открыть справку по горячим клавишам",
         ["?", "shift+?"]
       ),
       X1_PREVIEW: createShortcut(
@@ -33040,74 +33040,74 @@ return Q;
         "Select full size preview",
         "alt+3"
       ),
-      ONION_SKIN: createShortcut("onion-skin", "Toggle onion skin", "alt+O"),
-      TOGGLE_GRID: createShortcut("toggle-grid", "Show/Hide grid", "alt+G"),
+      ONION_SKIN: createShortcut("onion-skin", "Переключить кальку", "alt+O"),
+      TOGGLE_GRID: createShortcut("toggle-grid", "Показать/скрыть сетку", "alt+G"),
       LAYER_PREVIEW: createShortcut(
         "layer-preview",
-        "Toggle layer preview",
+        "Переключить предпросмотр слоя",
         "alt+L"
       ),
       MERGE_ANIMATION: createShortcut(
         "import-animation",
-        "Open merge animation popup",
+        "Открыть окно объединения анимации",
         "ctrl+shift+M"
       ),
       CLOSE_POPUP: createShortcut(
         "close-popup",
-        "Close an opened popup",
+        "Закрыть открытое окно",
         "ESC"
       ),
-      OFFSET_UP: createShortcut("move-up", "Move viewport up", "shift+up"),
+      OFFSET_UP: createShortcut("move-up", "Сдвинуть область просмотра вверх", "shift+up"),
       OFFSET_RIGHT: createShortcut(
         "move-right",
-        "Move viewport right",
+        "Сдвинуть область просмотра вправо",
         "shift+right"
       ),
       OFFSET_DOWN: createShortcut(
         "move-down",
-        "Move viewport down",
+        "Сдвинуть область просмотра вниз",
         "shift+down"
       ),
       OFFSET_LEFT: createShortcut(
         "move-left",
-        "Move viewport left",
+        "Сдвинуть область просмотра влево",
         "shift+left"
       )
     },
 
     STORAGE: {
-      SAVE: createShortcut("save", "Save the current sprite", "ctrl+S"),
-      OPEN: createShortcut("open", "(desktop) Open a .piskel file", "ctrl+O"),
+      SAVE: createShortcut("save", "Сохранить текущий спрайт", "ctrl+S"),
+      OPEN: createShortcut("open", "(настольная версия) Открыть файл .piskel", "ctrl+O"),
       SAVE_AS: createShortcut(
         "save-as",
-        "(desktop) Save as new",
+        "(настольная версия) Сохранить как новый",
         "ctrl+shift+S"
       )
     },
 
     COLOR: {
-      SWAP: createShortcut("swap-colors", "Swap primary/secondary colors", "X"),
-      RESET: createShortcut("reset-colors", "Reset default colors", "D"),
+      SWAP: createShortcut("swap-colors", "Поменять основной и дополнительный цвета", "X"),
+      RESET: createShortcut("reset-colors", "Сбросить цвета по умолчанию", "D"),
       CREATE_PALETTE: createShortcut(
         "create-palette",
-        "Open the palette creation popup",
+        "Открыть окно создания палитры",
         "alt+P"
       ),
       PREVIOUS_COLOR: createShortcut(
         "previous-color",
-        "Select the previous color in the current palette",
+        "Выбрать предыдущий цвет в текущей палитре",
         "<"
       ),
       NEXT_COLOR: createShortcut(
         "next-color",
-        "Select the next color in the current palette",
+        "Выбрать следующий цвет в текущей палитре",
         ">"
       ),
       SELECT_COLOR: createShortcut(
         "select-color",
-        "Select a palette color in the current palette",
+        "Выбрать цвет палитры в текущей палитре",
         "123456789".split(""),
-        "1 to 9"
+        "1–9"
       )
     },
 
@@ -33239,7 +33239,7 @@ return Q;
       if (s.removeKeys([key])) {
         $.publish(Events.SHOW_NOTIFICATION, [
           {
-            content: "Shortcut key removed for " + s.getId(),
+            content: "Клавиша сочетания удалена для " + s.getId(),
             hideDelay: 5000
           }
         ]);
@@ -33286,7 +33286,7 @@ return Q;
   ) {
     $.publish(Events.SHOW_NOTIFICATION, [
       {
-        content: "Piskel file import failed (" + reason + ")",
+        content: "Не удалось импортировать файл Piskel (" + reason + ")",
         hideDelay: 10000
       }
     ]);
@@ -33435,14 +33435,14 @@ return Q;
     frameSizeY,
     smoothing
   ) {
-    name = name || "Imported piskel";
+    name = name || "Импортированный piskel";
     var frames = this.createFramesFromImages_(
       images,
       frameSizeX,
       frameSizeY,
       smoothing
     );
-    var layer = pskl.model.Layer.fromFrames("Layer 1", frames);
+    var layer = pskl.model.Layer.fromFrames("Слой 1", frames);
     var descriptor = new pskl.model.piskel.Descriptor(name, "");
     return pskl.model.Piskel.fromLayers(
       [layer],
@@ -33978,7 +33978,7 @@ ns.ToolsHelper = {
 
   ns.Tool = function () {
     this.toolId = "tool";
-    this.helpText = "Abstract tool";
+    this.helpText = "Абстрактный инструмент";
     this.tooltipDescriptors = [];
   };
 
@@ -34162,7 +34162,7 @@ ns.ToolsHelper = {
     this.startRow = null;
 
     this.tooltipDescriptors = [
-      { key: "shift", description: "Keep 1 to 1 ratio" }
+      { key: "shift", description: "Сохранять пропорцию 1:1" }
     ];
   };
 
@@ -34304,7 +34304,7 @@ ns.ToolsHelper = {
 
   ns.SimplePen = function () {
     this.toolId = "tool-pen";
-    this.helpText = "Pen tool";
+    this.helpText = "Перо";
     this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.PEN;
 
     this.previousCol = null;
@@ -34453,7 +34453,7 @@ ns.ToolsHelper = {
 
     this.tooltipDescriptors = [
       { key: "ctrl", description: "Darken" },
-      { key: "shift", description: "Apply only once per pixel" }
+      { key: "shift", description: "Применять только один раз на пиксель" }
     ];
   };
 
@@ -34535,12 +34535,12 @@ ns.ToolsHelper = {
     this.superclass.constructor.call(this);
 
     this.toolId = "tool-vertical-mirror-pen";
-    this.helpText = "Vertical Mirror pen";
+    this.helpText = "Вертикальное зеркальное перо";
     this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.MIRROR_PEN;
 
     this.tooltipDescriptors = [
-      { key: "ctrl", description: "Use horizontal axis" },
-      { key: "shift", description: "Use horizontal and vertical axis" }
+      { key: "ctrl", description: "Использовать горизонтальную ось" },
+      { key: "shift", description: "Использовать горизонтальную и вертикальную оси" }
     ];
   };
 
@@ -34607,7 +34607,7 @@ ns.ToolsHelper = {
     this.superclass.constructor.call(this);
 
     this.toolId = "tool-eraser";
-    this.helpText = "Eraser tool";
+    this.helpText = "Ластик";
     this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.ERASER;
   };
 
@@ -34630,10 +34630,10 @@ ns.ToolsHelper = {
 
   ns.Stroke = function () {
     this.toolId = "tool-stroke";
-    this.helpText = "Stroke tool";
+    this.helpText = "Линия";
     this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.STROKE;
     this.tooltipDescriptors = [
-      { key: "shift", description: "Hold shift to draw straight lines" }
+      { key: "shift", description: "Удерживайте Shift, чтобы рисовать прямые линии" }
     ];
 
     // Stroke's first point coordinates (set in applyToolAt)
@@ -34811,7 +34811,7 @@ ns.ToolsHelper = {
 
   ns.PaintBucket = function () {
     this.toolId = "tool-paint-bucket";
-    this.helpText = "Paint bucket tool";
+    this.helpText = "Заливка";
     this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.PAINT_BUCKET;
   };
 
@@ -34863,7 +34863,7 @@ ns.ToolsHelper = {
     ns.ShapeTool.call(this);
 
     this.toolId = "tool-rectangle";
-    this.helpText = "Rectangle tool";
+    this.helpText = "Прямоугольник";
     this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.RECTANGLE;
   };
 
@@ -34912,7 +34912,7 @@ ns.ToolsHelper = {
     ns.ShapeTool.call(this);
 
     this.toolId = "tool-circle";
-    this.helpText = "Circle tool";
+    this.helpText = "Круг";
     this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.CIRCLE;
   };
 
@@ -35020,13 +35020,13 @@ ns.ToolsHelper = {
 
   ns.Move = function () {
     this.toolId = ns.Move.TOOL_ID;
-    this.helpText = "Move tool";
+    this.helpText = "Перемещение";
     this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.MOVE;
 
     this.tooltipDescriptors = [
-      { key: "ctrl", description: "Apply to all layers" },
-      { key: "shift", description: "Apply to all frames" },
-      { key: "alt", description: "Wrap canvas borders" }
+      { key: "ctrl", description: "Применить ко всем слоям" },
+      { key: "shift", description: "Применить ко всем кадрам" },
+      { key: "alt", description: "Зациклить границы холста" }
     ];
 
     // Stroke's first point coordinates (set in applyToolAt)
@@ -35163,11 +35163,11 @@ ns.ToolsHelper = {
     this.tooltipDescriptors = [
       {
         description:
-          "Drag the selection to move it. You may switch to other layers and frames."
+          "Перетащите выделение, чтобы переместить его. Можно переключаться на другие слои и кадры."
       },
       { key: "ctrl+c", description: "Copy the selected area" },
-      { key: "ctrl+v", description: "Paste the copied area" },
-      { key: "shift", description: "Hold to move the content" }
+      { key: "ctrl+v", description: "Вставить скопированную область" },
+      { key: "shift", description: "Удерживайте, чтобы перемещать содержимое" }
     ];
 
     $.subscribe(
@@ -35504,7 +35504,7 @@ ns.ToolsHelper = {
     ns.AbstractDragSelect.call(this);
 
     this.toolId = "tool-lasso-select";
-    this.helpText = "Lasso selection";
+    this.helpText = "Выделение лассо";
     this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.LASSO_SELECT;
   };
 
@@ -35610,7 +35610,7 @@ ns.ToolsHelper = {
     ns.AbstractDragSelect.call(this);
 
     this.toolId = "tool-rectangle-select";
-    this.helpText = "Rectangle selection";
+    this.helpText = "Прямоугольное выделение";
     this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.RECTANGLE_SELECT;
   };
 
@@ -35667,7 +35667,7 @@ ns.ToolsHelper = {
     ns.BaseSelect.call(this);
 
     this.toolId = "tool-shape-select";
-    this.helpText = "Shape selection";
+    this.helpText = "Выделение формы";
     this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.SHAPE_SELECT;
   };
 
@@ -35712,7 +35712,7 @@ ns.ToolsHelper = {
 
   ns.ColorPicker = function () {
     this.toolId = "tool-colorpicker";
-    this.helpText = "Color picker";
+    this.helpText = "Пипетка";
     this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.COLORPICKER;
   };
 
@@ -35747,12 +35747,12 @@ ns.ToolsHelper = {
 
   ns.ColorSwap = function () {
     this.toolId = "tool-colorswap";
-    this.helpText = "Paint all pixels of the same color";
+    this.helpText = "Закрасить все пиксели того же цвета";
     this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.COLORSWAP;
 
     this.tooltipDescriptors = [
-      { key: "ctrl", description: "Apply to all layers" },
-      { key: "shift", description: "Apply to all frames" }
+      { key: "ctrl", description: "Применить ко всем слоям" },
+      { key: "shift", description: "Применить ко всем кадрам" }
     ];
   };
 
@@ -35845,7 +35845,7 @@ ns.ToolsHelper = {
   ns.DitheringTool = function () {
     ns.SimplePen.call(this);
     this.toolId = "tool-dithering";
-    this.helpText = "Dithering tool";
+    this.helpText = "Дизеринг";
     this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.DITHERING;
   };
 
@@ -35955,10 +35955,10 @@ ns.ToolsHelper = {
 
   ns.Center = function () {
     this.toolId = "tool-center";
-    this.helpText = "Align image to the center";
+    this.helpText = "Выровнять изображение по центру";
     this.tooltipDescriptors = [
-      { key: "ctrl", description: "Apply to all layers" },
-      { key: "shift", description: "Apply to all frames" }
+      { key: "ctrl", description: "Применить ко всем слоям" },
+      { key: "shift", description: "Применить ко всем кадрам" }
     ];
   };
 
@@ -35973,7 +35973,7 @@ ns.ToolsHelper = {
 
   ns.Clone = function () {
     this.toolId = "tool-clone";
-    this.helpText = "Clone current layer to all frames";
+    this.helpText = "Клонировать текущий слой во все кадры";
     this.tooltipDescriptors = [];
   };
 
@@ -35994,12 +35994,12 @@ ns.ToolsHelper = {
 
   ns.Crop = function () {
     this.toolId = "tool-crop";
-    this.helpText = "Crop the sprite";
+    this.helpText = "Обрезать спрайт";
     this.tooltipDescriptors = [
       {
         description:
-          "Crop to fit the content or the selection. " +
-          "Applies to all frames and layers!"
+          "Обрезать по содержимому или выделению. " +
+          "Применяется ко всем кадрам и слоям!"
       }
     ];
   };
@@ -36132,11 +36132,11 @@ ns.ToolsHelper = {
 
   ns.Flip = function () {
     this.toolId = "tool-flip";
-    this.helpText = "Flip horizontally";
+    this.helpText = "Отразить по горизонтали";
     this.tooltipDescriptors = [
-      { key: "alt", description: "Flip vertically" },
-      { key: "ctrl", description: "Apply to all layers" },
-      { key: "shift", description: "Apply to all frames" }
+      { key: "alt", description: "Отразить по вертикали" },
+      { key: "ctrl", description: "Применить ко всем слоям" },
+      { key: "shift", description: "Применить ко всем кадрам" }
     ];
   };
 
@@ -36159,11 +36159,11 @@ ns.ToolsHelper = {
 
   ns.Rotate = function () {
     this.toolId = "tool-rotate";
-    this.helpText = "Counter-clockwise rotation";
+    this.helpText = "Поворот против часовой стрелки";
     this.tooltipDescriptors = [
-      { key: "alt", description: "Clockwise rotation" },
-      { key: "ctrl", description: "Apply to all layers" },
-      { key: "shift", description: "Apply to all frames" }
+      { key: "alt", description: "Поворот по часовой стрелке" },
+      { key: "ctrl", description: "Применить ко всем слоям" },
+      { key: "shift", description: "Применить ко всем кадрам" }
     ];
   };
 
@@ -36366,7 +36366,7 @@ ns.ToolsHelper = {
   ns.DrawingTestPlayer.prototype.createPiskel_ = function (width, height) {
     var descriptor = new pskl.model.piskel.Descriptor("TestPiskel", "");
     var piskel = new pskl.model.Piskel(width, height, 12, descriptor);
-    var layer = new pskl.model.Layer("Layer 1");
+    var layer = new pskl.model.Layer("Слой 1");
     var frame = new pskl.model.Frame(width, height);
 
     layer.addFrame(frame);
@@ -37711,7 +37711,7 @@ ns.ToolsHelper = {
 
       var size = pskl.UserSettings.get(pskl.UserSettings.DEFAULT_SIZE);
       var fps = Constants.DEFAULT.FPS;
-      var descriptor = new pskl.model.piskel.Descriptor("New Piskel", "");
+      var descriptor = new pskl.model.piskel.Descriptor("Новый Piskel", "");
       var piskel = new pskl.model.Piskel(
         size.width,
         size.height,
@@ -37719,7 +37719,7 @@ ns.ToolsHelper = {
         descriptor
       );
 
-      var layer = new pskl.model.Layer("Layer 1");
+      var layer = new pskl.model.Layer("Слой 1");
       var frame = new pskl.model.Frame(size.width, size.height);
 
       layer.addFrame(frame);
@@ -37928,7 +37928,7 @@ ns.ToolsHelper = {
       $.subscribe(Events.EXTERNAL_PISKEL_READY, function () {
         const externalPiskel = window._externalPiskel;
         if (!externalPiskel) {
-          console.error("No external piskel found");
+          console.error("Внешний piskel не найден");
           return;
         }
         pskl.utils.serialization.Deserializer.deserialize(

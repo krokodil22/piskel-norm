@@ -7486,7 +7486,7 @@ var Constants = {
     DRAWING_TEST_FOLDER: "drawing",
     APPENGINE_SAVE_LIMIT: 1048576,
     CONFIRM_OVERWRITE:
-      "This will replace your current animation, are you sure you want to continue?",
+      "Это заменит текущую анимацию. Продолжить?",
     APPENGINE_SAVE_URL: "save"
   },
   Events = {
@@ -8347,7 +8347,7 @@ var Constants = {
         var t = e.getFrames().map(function (e) {
           return e.clone();
         });
-        return pskl.model.Layer.fromFrames(e.getName() + " (clone)", t);
+        return pskl.model.Layer.fromFrames(e.getName() + " (копия)", t);
       },
       mergeLayers: function (e, t) {
         var r = e.getFrames(),
@@ -8447,7 +8447,7 @@ var Constants = {
         return (
           r.getLayers().forEach(function (r) {
             for (
-              var i = r.getName() + " (imported)",
+              var i = r.getName() + " (импортировано)",
                 o = new pskl.model.Layer(i),
                 s = 0;
               s < t.getFrameCount();
@@ -8596,9 +8596,9 @@ var Constants = {
     var e = $.namespace("pskl.utils");
     e.PiskelFileUtils = {
       FAILURE: {
-        EMPTY: "No data found in piskel file",
-        INVALID: "Invalid piskel file, contact us on twitter @piskelapp",
-        DESERIALIZATION: "Piskel data deserialization failed"
+        EMPTY: "В файле piskel не найдены данные",
+        INVALID: "Недопустимый файл piskel, свяжитесь с нами в Twitter @piskelapp",
+        DESERIALIZATION: "Не удалось прочитать данные Piskel"
       },
       loadFromFile: function (t, r, i) {
         pskl.utils.FileUtils.readFile(t, function (n) {
@@ -9262,7 +9262,7 @@ var Constants = {
             return pskl.model.Frame.fromPixelGrid(e);
           }),
           t = new pskl.model.piskel.Descriptor("Deserialized piskel", ""),
-          r = pskl.model.Layer.fromFrames("Layer 1", e);
+          r = pskl.model.Layer.fromFrames("Слой 1", e);
         this.callback_(
           pskl.model.Piskel.fromLayers([r], Constants.DEFAULT.FPS, t)
         );
@@ -9467,7 +9467,7 @@ var Constants = {
               )
                 t.copy ? (r.data = this.getContextData(e)) : (r.context = e);
               else {
-                if (null == e.childNodes) throw new Error("Invalid image");
+                if (null == e.childNodes) throw new Error("Недопустимое изображение");
                 t.copy ? (r.data = this.getImageData(e)) : (r.image = e);
               }
               return this.frames.push(r);
@@ -18087,7 +18087,7 @@ var Constants = {
           d.setAttribute("data-placement", "right"),
           d.setAttribute("data-tile-number", e),
           d.setAttribute("data-tile-action", r),
-          d.setAttribute("title", "Duplicate this frame"),
+          d.setAttribute("title", "Дублировать этот кадр"),
           (d.className =
             "tile-overlay duplicate-frame-action icon-frame-duplicate-white"),
           d.setAttribute("data-test-id", "duplicate-frame-button"),
@@ -18095,7 +18095,7 @@ var Constants = {
         var f = document.createElement("button");
         f.setAttribute("rel", "tooltip"),
           f.setAttribute("data-placement", "right"),
-          f.setAttribute("title", "Delete this frame"),
+          f.setAttribute("title", "Удалить этот кадр"),
           f.setAttribute("data-tile-number", e),
           f.setAttribute("data-tile-action", i),
           (f.className =
@@ -18255,7 +18255,7 @@ var Constants = {
           this.toggleLayerPreview_.bind(this)
         );
         var e = pskl.utils.TooltipFormatter.format(
-          "Preview all layers",
+          "Предпросмотр всех слоёв",
           this.layerPreviewShortcut,
           [{ description: "Opacity defined in PREFERENCES" }]
         );
@@ -18352,7 +18352,7 @@ var Constants = {
           t = pskl.utils.Dom.getData(r, "layerIndex");
           var n = this.piskelController.getLayerAt(parseInt(t, 10)),
             o = window.prompt(
-              "Set layer opacity (value between 0 and 1)",
+              "Задать прозрачность слоя (значение от 0 до 1)",
               n.getOpacity()
             );
           this.piskelController.setLayerOpacityAt(t, o);
@@ -18448,7 +18448,7 @@ var Constants = {
             window.setTimeout(this.onPopupLoaded.bind(this), 500));
       }),
       (e.PopupPreviewController.prototype.onPopupLoaded = function () {
-        (this.popup.document.title = "Piskel - preview"),
+        (this.popup.document.title = "Piskel — предпросмотр"),
           (this.popup.document.body.innerHTML = pskl.utils.Template.get(
             "popup-preview-partial"
           )),
@@ -18523,17 +18523,17 @@ var Constants = {
           original: {
             button: document.querySelector(".original-size-button"),
             shortcut: pskl.service.keyboard.Shortcuts.MISC.X1_PREVIEW,
-            tooltip: "Original size preview"
+            tooltip: "Предпросмотр в исходном размере"
           },
           best: {
             button: document.querySelector(".best-size-button"),
             shortcut: pskl.service.keyboard.Shortcuts.MISC.BEST_PREVIEW,
-            tooltip: "Best size preview"
+            tooltip: "Предпросмотр в оптимальном размере"
           },
           full: {
             button: document.querySelector(".full-size-button"),
             shortcut: pskl.service.keyboard.Shortcuts.MISC.FULL_PREVIEW,
-            tooltip: "Full size preview"
+            tooltip: "Предпросмотр в полном размере"
           }
         }),
         (this.toggleOnionSkinButton = document.querySelector(
@@ -18564,7 +18564,7 @@ var Constants = {
         t(this.onionSkinShortcut, this.toggleOnionSkin_.bind(this)),
           t(this.toggleGridShortcut, this.toggleGrid_.bind(this));
         var r = pskl.utils.TooltipFormatter.format(
-          "Toggle onion skin",
+          "Переключить кальку",
           this.onionSkinShortcut
         );
         for (var i in (this.toggleOnionSkinButton.setAttribute("title", r),
@@ -18614,13 +18614,13 @@ var Constants = {
             r = Math.floor(t),
             i = pskl.UserSettings.get(pskl.UserSettings.SEAMLESS_MODE);
           for (var n in (t < 1
-            ? (this.disablePreviewSizeWidget_("No other option available"),
+            ? (this.disablePreviewSizeWidget_("Другие параметры недоступны"),
               (e = ["full"]))
             : 1 === t
-              ? (this.disablePreviewSizeWidget_("No other option available"),
+              ? (this.disablePreviewSizeWidget_("Другие параметры недоступны"),
                 (e = ["original"]))
               : i
-                ? (this.disablePreviewSizeWidget_("Disabled in tile mode"),
+                ? (this.disablePreviewSizeWidget_("Отключено в режиме тайлов"),
                   (e = ["original"]))
                 : (this.enablePreviewSizeWidget_(),
                   (e =
@@ -19453,7 +19453,7 @@ var Constants = {
           (r.className = "user-message"),
           (r.innerHTML = t.content),
           (r.innerHTML =
-            r.innerHTML + '<div title="Close message" class="close">x</div>'),
+            r.innerHTML + '<div title="Закрыть сообщение" class="close">x</div>'),
           document.body.appendChild(r),
           r
             .querySelector(".close")
@@ -19989,7 +19989,7 @@ var Constants = {
           c.addFrame(f.getContext("2d"), { delay: 1e3 / t });
         }
         $.publish(Events.SHOW_PROGRESS, [
-          { name: "Building animated GIF ..." }
+          { name: "Создание анимированного GIF ..." }
         ]),
           c.on(
             "progress",
@@ -20013,7 +20013,7 @@ var Constants = {
         return (
           t ||
             (console.error(
-              "Unable to find unused color to use as transparent color in the current sprite"
+              "Не удалось найти неиспользуемый цвет для прозрачности в текущем спрайте"
             ),
             (t = "#FF00FF")),
           t
@@ -20863,7 +20863,7 @@ var Constants = {
             }),
             this.closeDrawer_())
           : (this.closeDrawer_(),
-            console.error("The selected file is not a piskel file"));
+            console.error("Выбранный файл не является файлом piskel"));
       }),
       (e.ImportController.prototype.importPictureFromFile_ = function () {
         var e = this.hiddenFileInput.files;
@@ -20875,7 +20875,7 @@ var Constants = {
               initArgs: { rawFiles: e }
             }),
             this.closeDrawer_())
-          : (this.closeDrawer_(), console.error("Some files are not images"));
+          : (this.closeDrawer_(), console.error("Некоторые файлы не являются изображениями"));
       }),
       (e.ImportController.prototype.isPiskel_ = function (e) {
         return /\.piskel$/.test(e.name);
@@ -20883,7 +20883,7 @@ var Constants = {
       (e.ImportController.prototype.onRestorePreviousSessionClick_ =
         function () {
           window.confirm(
-            "This will erase your current workspace. Continue ?"
+            "Это очистит текущую рабочую область. Продолжить?"
           ) &&
             (pskl.app.backupService.load(),
             $.publish(Events.CLOSE_SETTINGS_DRAWER));
@@ -21058,21 +21058,21 @@ var Constants = {
         this.colorsListWidget = new pskl.widgets.ColorsList(s);
         var a = e == Constants.CURRENT_COLORS_PALETTE_ID;
         if (e && !a) {
-          (n.style.display = "none"), this.setTitle("Edit Palette");
+          (n.style.display = "none"), this.setTitle("Редактировать палитру");
           var l = this.paletteService.getPaletteById(e);
           o = pskl.model.Palette.fromObject(l);
         } else {
           (i.style.display = "none"),
             (r.style.display = "none"),
-            this.setTitle("Create Palette");
+            this.setTitle("Создать палитру");
           var c = pskl.utils.Uuid.generate();
           o = a
             ? new pskl.model.Palette(
                 c,
-                "Current colors clone",
+                "Копия текущих цветов",
                 this.getCurrentColors_()
               )
-            : new pskl.model.Palette(c, "New palette", []);
+            : new pskl.model.Palette(c, "Новая палитра", []);
         }
         this.setPalette_(o);
       }),
@@ -21111,7 +21111,7 @@ var Constants = {
       }),
       (e.CreatePaletteController.prototype.deletePalette_ = function () {
         window.confirm(
-          "Are you sure you want to delete palette " + this.palette.name
+          "Вы уверены, что хотите удалить палитру " + this.palette.name
         ) &&
           (this.paletteService.deletePaletteById(this.palette.id),
           pskl.UserSettings.set(
@@ -21150,7 +21150,7 @@ var Constants = {
           );
       }),
       (e.CreatePaletteController.prototype.displayErrorMessage_ = function (e) {
-        (e = "Could not import palette : " + e),
+        (e = "Не удалось импортировать палитру: " + e),
           $.publish(Events.SHOW_NOTIFICATION, [{ content: e }]),
           window.setTimeout($.publish.bind($, Events.HIDE_NOTIFICATION), 2e3);
       }),
@@ -21179,11 +21179,11 @@ var Constants = {
         var t = e.target.getAttribute("data-action"),
           r = e.target.getAttribute("data-name");
         "load" === t
-          ? window.confirm("This will erase your current piskel. Continue ?") &&
+          ? window.confirm("Это удалит текущий piskel. Продолжить?") &&
             (this.service_.load(r), this.closeDialog())
           : "delete" === t &&
             window.confirm(
-              "This will permanently DELETE this piskel from your computer. Continue ?"
+              "Этот piskel будет навсегда УДАЛЁН с вашего компьютера. Продолжить?"
             ) &&
             (this.service_.remove(r), this.fillLocalPiskelsList_());
       }),
@@ -21252,7 +21252,7 @@ var Constants = {
       }),
       (e.CheatsheetController.prototype.onRestoreDefaultsClick_ = function () {
         window.confirm(
-          "Replace all custom shortcuts by the default Piskel shortcuts ?"
+          "Заменить все пользовательские горячие клавиши стандартными клавишами Piskel?"
         ) && pskl.app.shortcutService.restoreDefaultShortcuts();
       }),
       (e.CheatsheetController.prototype.onShortcutsChanged_ = function () {
@@ -21340,8 +21340,8 @@ var Constants = {
         r.isUndefined() && n.push("cheatsheet-shortcut-undefined"),
           r.isEditable() && n.push("cheatsheet-shortcut-editable");
         var o = r.isEditable()
-          ? "Click to edit the key"
-          : "Shortcut cannot be remapped";
+          ? "Нажмите, чтобы изменить клавишу"
+          : "Горячую клавишу нельзя переназначить";
         return pskl.utils.Template.replace(t, {
           id: r.getId(),
           title: o,
@@ -21369,10 +21369,10 @@ var Constants = {
       }),
       (e.CheatsheetController.prototype.getHelptextTitle_ = function () {
         var e = [
-          "Click on a shortcut to change the key.",
-          "When the shortcut blinks, press the key on your keyboard to assign it.",
-          "White shortcuts can not be edited.",
-          "Click on 'Restore default shortcuts' to erase all custom shortcuts."
+          "Нажмите на сочетание, чтобы изменить клавишу.",
+          "Когда сочетание мигает, нажмите клавишу на клавиатуре, чтобы назначить её.",
+          "Белые сочетания нельзя редактировать.",
+          "Нажмите 'Восстановить сочетания по умолчанию', чтобы удалить все пользовательские сочетания."
         ].reduce(function (e, t) {
           return (
             e + '<div class="cheatsheet-helptext-tooltip-item">' + t + "</div>"
@@ -21427,7 +21427,7 @@ var Constants = {
               r.endDate,
               "the {{Y}}/{{M}}/{{D}} at {{H}}:{{m}}"
             ),
-            count: 1 === r.count ? "1 snapshot" : r.count + " snapshots"
+            count: 1 === r.count ? "1 снимок" : r.count + " снимков"
           };
           return e + pskl.utils.Template.replace(t, i);
         }, "");
@@ -21445,7 +21445,7 @@ var Constants = {
             ? ((this.backupsController.backupsData.selectedSession = t),
               this.backupsController.next())
             : "delete" == n &&
-              window.confirm("Are you sure you want to delete this session?") &&
+              window.confirm("Вы уверены, что хотите удалить этот сеанс?") &&
               (e.target.closest(".session-item").classList.add("deleting"),
               Q.all([
                 pskl.app.backupService.deleteSession(t),
@@ -21510,7 +21510,7 @@ var Constants = {
       (e.SessionDetails.prototype.getMarkupForSnapshots_ = function (e) {
         if (0 === e.length)
           return (
-            console.warn("Could not retrieve snapshots for a session"),
+            console.warn("Не удалось получить снимки сеанса"),
             pskl.utils.Template.get("snapshot-list-empty")
           );
         var t = pskl.utils.Template.get("snapshot-list-item");
@@ -21523,7 +21523,7 @@ var Constants = {
               r.date,
               "the {{Y}}/{{M}}/{{D}} at {{H}}:{{m}}"
             ),
-            frames: 1 === r.frames ? "1 frame" : r.frames + " frames",
+            frames: 1 === r.frames ? "1 кадр" : r.frames + " кадров",
             resolution: pskl.utils.StringUtils.formatSize(r.width, r.height),
             fps: r.fps
           };
@@ -21736,13 +21736,13 @@ var Constants = {
           r && i
             ? [
                 '<div class="import-resize-warning">',
-                "  Imported content will be cropped!",
+                "  Импортируемое содержимое будет обрезано!",
                 "</div>",
-                "Select crop anchor:"
+                "Выберите якорь обрезки:"
               ].join("")
             : r
-              ? "Select resize anchor:"
-              : "Select position anchor:";
+              ? "Выберите якорь изменения размера:"
+              : "Выберите якорь позиции:";
       }),
       (e.AdjustSize.prototype.onAnchorChange_ = function (e) {
         this.mergeData.origin = e;
@@ -22148,7 +22148,7 @@ var Constants = {
                   }.bind(this)
                 )
               : (console.error(
-                  "Unsupported import. Only single piskel or single image are supported at the moment."
+                  "Импорт не поддерживается. Сейчас поддерживается только один piskel или одно изображение."
                 ),
                 this.closeDialog());
       }),
@@ -23208,7 +23208,7 @@ var Constants = {
       }),
       (e.StorageService.prototype.delegateSave_ = function (e, t, r) {
         return this.savingFlag_
-          ? Q.reject("Already saving")
+          ? Q.reject("Сохранение уже выполняется")
           : ($.publish(Events.BEFORE_SAVING_PISKEL),
             e.save(t, r).then(this.onSaveSuccess_, this.onSaveError_));
       }),
@@ -23234,13 +23234,13 @@ var Constants = {
       }),
       (e.StorageService.prototype.onSaveSuccess_ = function () {
         $.publish(Events.SHOW_NOTIFICATION, [
-          { content: "Successfully saved !", hideDelay: 3e3 }
+          { content: "Успешно сохранено!", hideDelay: 3e3 }
         ]),
           $.publish(Events.PISKEL_SAVED),
           this.afterSaving_();
       }),
       (e.StorageService.prototype.onSaveError_ = function (e) {
-        var t = "Saving failed";
+        var t = "Не удалось сохранить";
         return (
           e && (t += " : " + e),
           $.publish(Events.SHOW_NOTIFICATION, [{ content: t, hideDelay: 1e4 }]),
@@ -23295,7 +23295,7 @@ var Constants = {
       (e.IndexedDbStorageService.prototype.init = function () {
         this.piskelDatabase.init().catch(function (e) {
           console.log(
-            "Failed to initialize PiskelDatabase, local browser saves will be unavailable."
+            "Не удалось инициализировать PiskelDatabase, локальные сохранения в браузере будут недоступны."
           );
         });
       }),
@@ -23350,7 +23350,7 @@ var Constants = {
         if (
           pskl.app.localStorageService.getPiskel(t) &&
           !window.confirm(
-            "There is already a piskel saved as " + t + ". Overwrite ?"
+            "Уже есть piskel, сохранённый как " + t + ". Перезаписать?"
           )
         )
           return Q.reject('Cancelled by user, "' + t + '" already exists');
@@ -23425,7 +23425,7 @@ var Constants = {
           };
         i.length > Constants.APPENGINE_SAVE_LIMIT &&
           r.reject(
-            "This sprite is too big to be saved on the gallery. Try saving it as a .piskel file."
+            "Этот спрайт слишком большой для сохранения в галерее. Попробуйте сохранить его как файл .piskel."
           ),
           t.isPublic && (n.public = !0);
         return (
@@ -23444,12 +23444,12 @@ var Constants = {
       }),
       (e.GalleryStorageService.prototype.getErrorMessage_ = function (e) {
         return 401 === e.status
-          ? "Session expired, please log in again."
+          ? "Сеанс истёк, войдите снова."
           : 403 === e.status
-            ? "Unauthorized action, this sprite belongs to another account."
+            ? "Действие не разрешено, этот спрайт принадлежит другой учётной записи."
             : 500 === e.status
-              ? "Unexpected server error, please contact us on Github (piskel) or Twitter (@piskelapp)"
-              : "Unknown error";
+              ? "Неожиданная ошибка сервера, свяжитесь с нами на GitHub (piskel) или Twitter (@piskelapp)"
+              : "Неизвестная ошибка";
       });
   })(),
   (function () {
@@ -23468,7 +23468,7 @@ var Constants = {
         );
       }),
       (e.DesktopStorageService.prototype.saveAtPath_ = function (e, t) {
-        if (!t) return Q.reject("Invalid file name");
+        if (!t) return Q.reject("Недопустимое имя файла");
         var r = pskl.utils.serialization.Serializer.serialize(e);
         return (
           (t = this.addExtensionIfNeeded_(t)),
@@ -23648,7 +23648,7 @@ var Constants = {
           pskl.app.savedStatusService.isDirty())
         ) {
           var t =
-            "Your current sprite has unsaved changes. Are you sure you want to quit?";
+            "В текущем спрайте есть несохранённые изменения. Вы уверены, что хотите выйти?";
           return (e = e || window.event) && (e.returnValue = t), t;
         }
       });
@@ -23887,7 +23887,7 @@ var Constants = {
   (function () {
     var e = $.namespace("pskl.service.palette");
     (e.CurrentColorsPalette = function () {
-      (this.name = "Current colors"),
+      (this.name = "Текущие цвета"),
         (this.id = Constants.CURRENT_COLORS_PALETTE_ID),
         (this.colorSorter = new pskl.service.color.ColorSorter());
     }),
@@ -23928,7 +23928,7 @@ var Constants = {
         } else t.push(e);
         this.savePalettes_(t),
           $.publish(Events.SHOW_NOTIFICATION, [
-            { content: "Palette " + e.name + " successfully saved !" }
+            { content: "Палитра " + e.name + " успешно сохранена!" }
           ]),
           window.setTimeout($.publish.bind($, Events.HIDE_NOTIFICATION), 2e3);
       }),
@@ -24065,7 +24065,7 @@ var Constants = {
           this.onWorkerError_.bind(this)
         );
         $.publish(Events.SHOW_PROGRESS, [
-          { name: "Processing image colors ..." }
+          { name: "Обработка цветов изображения ..." }
         ]),
           t.process();
       }),
@@ -24073,7 +24073,7 @@ var Constants = {
         var t = e.data.colorsMap,
           r = Object.keys(t);
         if (r.length > Constants.MAX_PALETTE_COLORS)
-          this.onError("Too many colors : " + r.length);
+          this.onError("Слишком много цветов: " + r.length);
         else {
           var i = pskl.utils.Uuid.generate(),
             n = this.colorSorter_.sort(r),
@@ -24088,7 +24088,7 @@ var Constants = {
       }),
       (e.PaletteImageReader.prototype.onWorkerError_ = function (e) {
         $.publish(Events.HIDE_PROGRESS),
-          this.onError("Unable to process the image : " + e.data.message);
+          this.onError("Не удалось обработать изображение: " + e.data.message);
       });
   })(),
   (function () {
@@ -24403,102 +24403,102 @@ var Constants = {
         "ctrl+shift+Z"
       ],
       TOOL: {
-        PEN: t("tool-pen", "Pen tool", "P"),
+        PEN: t("tool-pen", "Перо", "P"),
         MIRROR_PEN: t(
           "tool-vertical-mirror-pen",
-          "Vertical mirror pen tool",
+          "Вертикальное зеркальное перо",
           "V"
         ),
-        PAINT_BUCKET: t("tool-paint-bucket", "Paint bucket tool", "B"),
-        COLORSWAP: t("tool-colorswap", "Magic bucket tool", "A"),
-        ERASER: t("tool-eraser", "Eraser pen tool", "E"),
-        STROKE: t("tool-stroke", "Stroke tool", "L"),
-        RECTANGLE: t("tool-rectangle", "Rectangle tool", "R"),
-        CIRCLE: t("tool-circle", "Circle tool", "C"),
-        MOVE: t("tool-move", "Move tool", "M"),
-        SHAPE_SELECT: t("tool-shape-select", "Shape selection", "Z"),
+        PAINT_BUCKET: t("tool-paint-bucket", "Заливка", "B"),
+        COLORSWAP: t("tool-colorswap", "Волшебная заливка", "A"),
+        ERASER: t("tool-eraser", "Ластик", "E"),
+        STROKE: t("tool-stroke", "Линия", "L"),
+        RECTANGLE: t("tool-rectangle", "Прямоугольник", "R"),
+        CIRCLE: t("tool-circle", "Круг", "C"),
+        MOVE: t("tool-move", "Перемещение", "M"),
+        SHAPE_SELECT: t("tool-shape-select", "Выделение формы", "Z"),
         RECTANGLE_SELECT: t(
           "tool-rectangle-select",
-          "Rectangle selection",
+          "Прямоугольное выделение",
           "S"
         ),
-        LASSO_SELECT: t("tool-lasso-select", "Lasso selection", "H"),
-        LIGHTEN: t("tool-lighten", "Lighten tool", "U"),
-        DITHERING: t("tool-dithering", "Dithering tool", "T"),
-        COLORPICKER: t("tool-colorpicker", "Color picker", "O")
+        LASSO_SELECT: t("tool-lasso-select", "Выделение лассо", "H"),
+        LIGHTEN: t("tool-lighten", "Осветление", "U"),
+        DITHERING: t("tool-dithering", "Дизеринг", "T"),
+        COLORPICKER: t("tool-colorpicker", "Пипетка", "O")
       },
       SELECTION: {
-        CUT: t("selection-cut", "Cut selection", "ctrl+X"),
-        COPY: t("selection-copy", "Copy selection", "ctrl+C"),
-        PASTE: t("selection-paste", "Paste selection", "ctrl+V"),
-        DELETE: t("selection-delete", "Delete selection", ["DEL", "BACK"]),
-        COMMIT: t("selection-commit", "Commit selection", ["ENTER"])
+        CUT: t("selection-cut", "Вырезать выделение", "ctrl+X"),
+        COPY: t("selection-copy", "Копировать выделение", "ctrl+C"),
+        PASTE: t("selection-paste", "Вставить выделение", "ctrl+V"),
+        DELETE: t("selection-delete", "Удалить выделение", ["DEL", "BACK"]),
+        COMMIT: t("selection-commit", "Применить выделение", ["ENTER"])
       },
       MISC: {
-        RESET_ZOOM: t("reset-zoom", "Reset zoom level", "0"),
-        INCREASE_ZOOM: t("increase-zoom", "Increase zoom level", "+"),
-        DECREASE_ZOOM: t("decrease-zoom", "Decrease zoom level", "-"),
-        INCREASE_PENSIZE: t("increase-pensize", "Increase pen size", "]"),
-        DECREASE_PENSIZE: t("decrease-pensize", "Decrease pen size", "["),
+        RESET_ZOOM: t("reset-zoom", "Сбросить масштаб", "0"),
+        INCREASE_ZOOM: t("increase-zoom", "Увеличить масштаб", "+"),
+        DECREASE_ZOOM: t("decrease-zoom", "Уменьшить масштаб", "-"),
+        INCREASE_PENSIZE: t("increase-pensize", "Увеличить размер пера", "]"),
+        DECREASE_PENSIZE: t("decrease-pensize", "Уменьшить размер пера", "["),
         UNDO: t("undo", "Undo", "ctrl+Z"),
         REDO: t("redo", "Redo", ["ctrl+Y", "ctrl+shift+Z"]),
-        PREVIOUS_FRAME: t("previous-frame", "Select previous frame", "up"),
-        NEXT_FRAME: t("next-frame", "Select next frame", "down"),
-        NEW_FRAME: t("new-frame", "Create new empty frame", "N"),
+        PREVIOUS_FRAME: t("previous-frame", "Выбрать предыдущий кадр", "up"),
+        NEXT_FRAME: t("next-frame", "Выбрать следующий кадр", "down"),
+        NEW_FRAME: t("new-frame", "Создать новый пустой кадр", "N"),
         DUPLICATE_FRAME: t(
           "duplicate-frame",
-          "Duplicate selected frame",
+          "Дублировать выбранный кадр",
           "shift+N"
         ),
-        CHEATSHEET: t("cheatsheet", "Open the keyboard shortcut cheatsheet", [
+        CHEATSHEET: t("cheatsheet", "Открыть справку по горячим клавишам", [
           "?",
           "shift+?"
         ]),
         X1_PREVIEW: t("x1-preview", "Select original size preview", "alt+1"),
         BEST_PREVIEW: t("best-preview", "Select best size preview", "alt+2"),
         FULL_PREVIEW: t("full-preview", "Select full size preview", "alt+3"),
-        ONION_SKIN: t("onion-skin", "Toggle onion skin", "alt+O"),
-        TOGGLE_GRID: t("toggle-grid", "Show/Hide grid", "alt+G"),
-        LAYER_PREVIEW: t("layer-preview", "Toggle layer preview", "alt+L"),
+        ONION_SKIN: t("onion-skin", "Переключить кальку", "alt+O"),
+        TOGGLE_GRID: t("toggle-grid", "Показать/скрыть сетку", "alt+G"),
+        LAYER_PREVIEW: t("layer-preview", "Переключить предпросмотр слоя", "alt+L"),
         MERGE_ANIMATION: t(
           "import-animation",
-          "Open merge animation popup",
+          "Открыть окно объединения анимации",
           "ctrl+shift+M"
         ),
-        CLOSE_POPUP: t("close-popup", "Close an opened popup", "ESC"),
-        OFFSET_UP: t("move-up", "Move viewport up", "shift+up"),
-        OFFSET_RIGHT: t("move-right", "Move viewport right", "shift+right"),
-        OFFSET_DOWN: t("move-down", "Move viewport down", "shift+down"),
-        OFFSET_LEFT: t("move-left", "Move viewport left", "shift+left")
+        CLOSE_POPUP: t("close-popup", "Закрыть открытое окно", "ESC"),
+        OFFSET_UP: t("move-up", "Сдвинуть область просмотра вверх", "shift+up"),
+        OFFSET_RIGHT: t("move-right", "Сдвинуть область просмотра вправо", "shift+right"),
+        OFFSET_DOWN: t("move-down", "Сдвинуть область просмотра вниз", "shift+down"),
+        OFFSET_LEFT: t("move-left", "Сдвинуть область просмотра влево", "shift+left")
       },
       STORAGE: {
-        SAVE: t("save", "Save the current sprite", "ctrl+S"),
-        OPEN: t("open", "(desktop) Open a .piskel file", "ctrl+O"),
-        SAVE_AS: t("save-as", "(desktop) Save as new", "ctrl+shift+S")
+        SAVE: t("save", "Сохранить текущий спрайт", "ctrl+S"),
+        OPEN: t("open", "(настольная версия) Открыть файл .piskel", "ctrl+O"),
+        SAVE_AS: t("save-as", "(настольная версия) Сохранить как новый", "ctrl+shift+S")
       },
       COLOR: {
-        SWAP: t("swap-colors", "Swap primary/secondary colors", "X"),
-        RESET: t("reset-colors", "Reset default colors", "D"),
+        SWAP: t("swap-colors", "Поменять основной и дополнительный цвета", "X"),
+        RESET: t("reset-colors", "Сбросить цвета по умолчанию", "D"),
         CREATE_PALETTE: t(
           "create-palette",
-          "Open the palette creation popup",
+          "Открыть окно создания палитры",
           "alt+P"
         ),
         PREVIOUS_COLOR: t(
           "previous-color",
-          "Select the previous color in the current palette",
+          "Выбрать предыдущий цвет в текущей палитре",
           "<"
         ),
         NEXT_COLOR: t(
           "next-color",
-          "Select the next color in the current palette",
+          "Выбрать следующий цвет в текущей палитре",
           ">"
         ),
         SELECT_COLOR: t(
           "select-color",
-          "Select a palette color in the current palette",
+          "Выбрать цвет палитры в текущей палитре",
           "123456789".split(""),
-          "1 to 9"
+          "1–9"
         )
       },
       CATEGORIES: ["TOOL", "SELECTION", "MISC", "STORAGE", "COLOR"]
@@ -24578,7 +24578,7 @@ var Constants = {
           t.removeKeys([e]) &&
             $.publish(Events.SHOW_NOTIFICATION, [
               {
-                content: "Shortcut key removed for " + t.getId(),
+                content: "Клавиша сочетания удалена для " + t.getId(),
                 hideDelay: 5e3
               }
             ]);
@@ -24604,7 +24604,7 @@ var Constants = {
       }),
       (e.ImportService.prototype.onPiskelFileImportFailed_ = function (e, t) {
         $.publish(Events.SHOW_NOTIFICATION, [
-          { content: "Piskel file import failed (" + t + ")", hideDelay: 1e4 }
+          { content: "Не удалось импортировать файл Piskel (" + t + ")", hideDelay: 1e4 }
         ]);
       }),
       (e.ImportService.prototype.newPiskelFromImage = function (e, t, r) {
@@ -24667,9 +24667,9 @@ var Constants = {
         i,
         n
       ) {
-        t = t || "Imported piskel";
+        t = t || "Импортированный piskel";
         var o = this.createFramesFromImages_(e, r, i, n),
-          s = pskl.model.Layer.fromFrames("Layer 1", o),
+          s = pskl.model.Layer.fromFrames("Слой 1", o),
           a = new pskl.model.piskel.Descriptor(t, "");
         return pskl.model.Piskel.fromLayers([s], Constants.DEFAULT.FPS, a);
       }),
@@ -25042,7 +25042,7 @@ var ns = $.namespace("pskl.tools");
     var e = $.namespace("pskl.tools");
     (e.Tool = function () {
       (this.toolId = "tool"),
-        (this.helpText = "Abstract tool"),
+        (this.helpText = "Абстрактный инструмент"),
         (this.tooltipDescriptors = []);
     }),
       (e.Tool.prototype.getHelpText = function () {
@@ -25144,7 +25144,7 @@ var ns = $.namespace("pskl.tools");
       (this.startCol = null),
         (this.startRow = null),
         (this.tooltipDescriptors = [
-          { key: "shift", description: "Keep 1 to 1 ratio" }
+          { key: "shift", description: "Сохранять пропорцию 1:1" }
         ]);
     }),
       pskl.utils.inherit(e.ShapeTool, e.BaseTool),
@@ -25210,7 +25210,7 @@ var ns = $.namespace("pskl.tools");
     var e = $.namespace("pskl.tools.drawing");
     (e.SimplePen = function () {
       (this.toolId = "tool-pen"),
-        (this.helpText = "Pen tool"),
+        (this.helpText = "Перо"),
         (this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.PEN),
         (this.previousCol = null),
         (this.previousRow = null),
@@ -25290,7 +25290,7 @@ var ns = $.namespace("pskl.tools");
         (this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.LIGHTEN),
         (this.tooltipDescriptors = [
           { key: "ctrl", description: "Darken" },
-          { key: "shift", description: "Apply only once per pixel" }
+          { key: "shift", description: "Применять только один раз на пиксель" }
         ]);
     }),
       pskl.utils.inherit(e.Lighten, e.SimplePen),
@@ -25326,11 +25326,11 @@ var ns = $.namespace("pskl.tools");
     (e.VerticalMirrorPen = function () {
       this.superclass.constructor.call(this),
         (this.toolId = "tool-vertical-mirror-pen"),
-        (this.helpText = "Vertical Mirror pen"),
+        (this.helpText = "Вертикальное зеркальное перо"),
         (this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.MIRROR_PEN),
         (this.tooltipDescriptors = [
-          { key: "ctrl", description: "Use horizontal axis" },
-          { key: "shift", description: "Use horizontal and vertical axis" }
+          { key: "ctrl", description: "Использовать горизонтальную ось" },
+          { key: "shift", description: "Использовать горизонтальную и вертикальную оси" }
         ]);
     }),
       pskl.utils.inherit(e.VerticalMirrorPen, e.SimplePen),
@@ -25361,7 +25361,7 @@ var ns = $.namespace("pskl.tools");
     (e.Eraser = function () {
       this.superclass.constructor.call(this),
         (this.toolId = "tool-eraser"),
-        (this.helpText = "Eraser tool"),
+        (this.helpText = "Ластик"),
         (this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.ERASER);
     }),
       pskl.utils.inherit(e.Eraser, e.SimplePen),
@@ -25373,10 +25373,10 @@ var ns = $.namespace("pskl.tools");
     var e = $.namespace("pskl.tools.drawing");
     (e.Stroke = function () {
       (this.toolId = "tool-stroke"),
-        (this.helpText = "Stroke tool"),
+        (this.helpText = "Линия"),
         (this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.STROKE),
         (this.tooltipDescriptors = [
-          { key: "shift", description: "Hold shift to draw straight lines" }
+          { key: "shift", description: "Удерживайте Shift, чтобы рисовать прямые линии" }
         ]),
         (this.startCol = null),
         (this.startRow = null);
@@ -25472,7 +25472,7 @@ var ns = $.namespace("pskl.tools");
     var e = $.namespace("pskl.tools.drawing");
     (e.PaintBucket = function () {
       (this.toolId = "tool-paint-bucket"),
-        (this.helpText = "Paint bucket tool"),
+        (this.helpText = "Заливка"),
         (this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.PAINT_BUCKET);
     }),
       pskl.utils.inherit(e.PaintBucket, e.BaseTool),
@@ -25495,7 +25495,7 @@ var ns = $.namespace("pskl.tools");
     (e.Rectangle = function () {
       e.ShapeTool.call(this),
         (this.toolId = "tool-rectangle"),
-        (this.helpText = "Rectangle tool"),
+        (this.helpText = "Прямоугольник"),
         (this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.RECTANGLE);
     }),
       pskl.utils.inherit(e.Rectangle, e.ShapeTool),
@@ -25521,7 +25521,7 @@ var ns = $.namespace("pskl.tools");
     (e.Circle = function () {
       e.ShapeTool.call(this),
         (this.toolId = "tool-circle"),
-        (this.helpText = "Circle tool"),
+        (this.helpText = "Круг"),
         (this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.CIRCLE);
     }),
       pskl.utils.inherit(e.Circle, e.ShapeTool),
@@ -25595,12 +25595,12 @@ var ns = $.namespace("pskl.tools");
     var e = $.namespace("pskl.tools.drawing");
     (e.Move = function () {
       (this.toolId = e.Move.TOOL_ID),
-        (this.helpText = "Move tool"),
+        (this.helpText = "Перемещение"),
         (this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.MOVE),
         (this.tooltipDescriptors = [
-          { key: "ctrl", description: "Apply to all layers" },
-          { key: "shift", description: "Apply to all frames" },
-          { key: "alt", description: "Wrap canvas borders" }
+          { key: "ctrl", description: "Применить ко всем слоям" },
+          { key: "shift", description: "Применить ко всем кадрам" },
+          { key: "alt", description: "Зациклить границы холста" }
         ]),
         (this.startCol = null),
         (this.startRow = null);
@@ -25673,11 +25673,11 @@ var ns = $.namespace("pskl.tools");
         (this.tooltipDescriptors = [
           {
             description:
-              "Drag the selection to move it. You may switch to other layers and frames."
+              "Перетащите выделение, чтобы переместить его. Можно переключаться на другие слои и кадры."
           },
           { key: "ctrl+c", description: "Copy the selected area" },
-          { key: "ctrl+v", description: "Paste the copied area" },
-          { key: "shift", description: "Hold to move the content" }
+          { key: "ctrl+v", description: "Вставить скопированную область" },
+          { key: "shift", description: "Удерживайте, чтобы перемещать содержимое" }
         ]),
         $.subscribe(
           Events.SELECTION_DISMISSED,
@@ -25829,7 +25829,7 @@ var ns = $.namespace("pskl.tools");
     (e.LassoSelect = function () {
       e.AbstractDragSelect.call(this),
         (this.toolId = "tool-lasso-select"),
-        (this.helpText = "Lasso selection"),
+        (this.helpText = "Выделение лассо"),
         (this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.LASSO_SELECT);
     }),
       pskl.utils.inherit(e.LassoSelect, e.AbstractDragSelect),
@@ -25885,7 +25885,7 @@ var ns = $.namespace("pskl.tools");
     (e.RectangleSelect = function () {
       e.AbstractDragSelect.call(this),
         (this.toolId = "tool-rectangle-select"),
-        (this.helpText = "Rectangle selection"),
+        (this.helpText = "Прямоугольное выделение"),
         (this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.RECTANGLE_SELECT);
     }),
       pskl.utils.inherit(e.RectangleSelect, e.AbstractDragSelect),
@@ -25912,7 +25912,7 @@ var ns = $.namespace("pskl.tools");
     (e.ShapeSelect = function () {
       e.BaseSelect.call(this),
         (this.toolId = "tool-shape-select"),
-        (this.helpText = "Shape selection"),
+        (this.helpText = "Выделение формы"),
         (this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.SHAPE_SELECT);
     }),
       pskl.utils.inherit(e.ShapeSelect, e.BaseSelect),
@@ -25931,7 +25931,7 @@ var ns = $.namespace("pskl.tools");
     var e = $.namespace("pskl.tools.drawing");
     (e.ColorPicker = function () {
       (this.toolId = "tool-colorpicker"),
-        (this.helpText = "Color picker"),
+        (this.helpText = "Пипетка"),
         (this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.COLORPICKER);
     }),
       pskl.utils.inherit(e.ColorPicker, e.BaseTool),
@@ -25949,11 +25949,11 @@ var ns = $.namespace("pskl.tools");
     var e = $.namespace("pskl.tools.drawing");
     (e.ColorSwap = function () {
       (this.toolId = "tool-colorswap"),
-        (this.helpText = "Paint all pixels of the same color"),
+        (this.helpText = "Закрасить все пиксели того же цвета"),
         (this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.COLORSWAP),
         (this.tooltipDescriptors = [
-          { key: "ctrl", description: "Apply to all layers" },
-          { key: "shift", description: "Apply to all frames" }
+          { key: "ctrl", description: "Применить ко всем слоям" },
+          { key: "shift", description: "Применить ко всем кадрам" }
         ]);
     }),
       pskl.utils.inherit(e.ColorSwap, e.BaseTool),
@@ -26003,7 +26003,7 @@ var ns = $.namespace("pskl.tools");
     (e.DitheringTool = function () {
       e.SimplePen.call(this),
         (this.toolId = "tool-dithering"),
-        (this.helpText = "Dithering tool"),
+        (this.helpText = "Дизеринг"),
         (this.shortcut = pskl.service.keyboard.Shortcuts.TOOL.DITHERING);
     }),
       pskl.utils.inherit(e.DitheringTool, e.SimplePen),
@@ -26066,10 +26066,10 @@ var ns = $.namespace("pskl.tools");
     var e = $.namespace("pskl.tools.transform");
     (e.Center = function () {
       (this.toolId = "tool-center"),
-        (this.helpText = "Align image to the center"),
+        (this.helpText = "Выровнять изображение по центру"),
         (this.tooltipDescriptors = [
-          { key: "ctrl", description: "Apply to all layers" },
-          { key: "shift", description: "Apply to all frames" }
+          { key: "ctrl", description: "Применить ко всем слоям" },
+          { key: "shift", description: "Применить ко всем кадрам" }
         ]);
     }),
       pskl.utils.inherit(e.Center, e.AbstractTransformTool),
@@ -26081,7 +26081,7 @@ var ns = $.namespace("pskl.tools");
     var e = $.namespace("pskl.tools.transform");
     (e.Clone = function () {
       (this.toolId = "tool-clone"),
-        (this.helpText = "Clone current layer to all frames"),
+        (this.helpText = "Клонировать текущий слой во все кадры"),
         (this.tooltipDescriptors = []);
     }),
       pskl.utils.inherit(e.Clone, e.AbstractTransformTool),
@@ -26099,7 +26099,7 @@ var ns = $.namespace("pskl.tools");
     var e = $.namespace("pskl.tools.transform");
     (e.Crop = function () {
       (this.toolId = "tool-crop"),
-        (this.helpText = "Crop the sprite"),
+        (this.helpText = "Обрезать спрайт"),
         (this.tooltipDescriptors = [
           {
             description:
@@ -26177,11 +26177,11 @@ var ns = $.namespace("pskl.tools");
     var e = $.namespace("pskl.tools.transform");
     (e.Flip = function () {
       (this.toolId = "tool-flip"),
-        (this.helpText = "Flip horizontally"),
+        (this.helpText = "Отразить по горизонтали"),
         (this.tooltipDescriptors = [
-          { key: "alt", description: "Flip vertically" },
-          { key: "ctrl", description: "Apply to all layers" },
-          { key: "shift", description: "Apply to all frames" }
+          { key: "alt", description: "Отразить по вертикали" },
+          { key: "ctrl", description: "Применить ко всем слоям" },
+          { key: "shift", description: "Применить ко всем кадрам" }
         ]);
     }),
       pskl.utils.inherit(e.Flip, e.AbstractTransformTool),
@@ -26195,11 +26195,11 @@ var ns = $.namespace("pskl.tools");
     var e = $.namespace("pskl.tools.transform");
     (e.Rotate = function () {
       (this.toolId = "tool-rotate"),
-        (this.helpText = "Counter-clockwise rotation"),
+        (this.helpText = "Поворот против часовой стрелки"),
         (this.tooltipDescriptors = [
-          { key: "alt", description: "Clockwise rotation" },
-          { key: "ctrl", description: "Apply to all layers" },
-          { key: "shift", description: "Apply to all frames" }
+          { key: "alt", description: "Поворот по часовой стрелке" },
+          { key: "ctrl", description: "Применить ко всем слоям" },
+          { key: "shift", description: "Применить ко всем кадрам" }
         ]);
     }),
       pskl.utils.inherit(e.Rotate, e.AbstractTransformTool),
@@ -26345,7 +26345,7 @@ var ns = $.namespace("pskl.tools");
       (e.DrawingTestPlayer.prototype.createPiskel_ = function (e, t) {
         var r = new pskl.model.piskel.Descriptor("TestPiskel", ""),
           i = new pskl.model.Piskel(e, t, 12, r),
-          n = new pskl.model.Layer("Layer 1"),
+          n = new pskl.model.Layer("Слой 1"),
           o = new pskl.model.Frame(e, t);
         return n.addFrame(o), i.addLayer(n), i;
       }),
@@ -27312,9 +27312,9 @@ var ns = $.namespace("pskl.tools");
         this.shortcutService.init();
       var e = pskl.UserSettings.get(pskl.UserSettings.DEFAULT_SIZE),
         t = Constants.DEFAULT.FPS,
-        r = new pskl.model.piskel.Descriptor("New Piskel", ""),
+        r = new pskl.model.piskel.Descriptor("Новый Piskel", ""),
         i = new pskl.model.Piskel(e.width, e.height, t, r),
-        n = new pskl.model.Layer("Layer 1"),
+        n = new pskl.model.Layer("Слой 1"),
         o = new pskl.model.Frame(e.width, e.height);
       if (
         (n.addFrame(o),
@@ -27495,7 +27495,7 @@ var ns = $.namespace("pskl.tools");
                   pskl.app.piskelController.setPiskel(e);
                 }
               )
-            : console.error("No external piskel found");
+            : console.error("Внешний piskel не найден");
         }),
         pskl.devtools && pskl.devtools.init(),
         pskl.utils.Environment.detectNodeWebkit() && pskl.utils.UserAgent.isMac)
