@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -21,7 +21,7 @@
     transition:opacity 0.5s;
     color:white;"
     >
-      <span style="top:45%">Loading Piskel ...</span>
+      <span style="top:45%">Загрузка Piskel ...</span>
     </div>
     <style type="text/css">
     #main-wrapper {
@@ -68,7 +68,7 @@
         href="index.html"
         target="_blank"
         class="new-piskel-desktop button button-primary"
-        title="Create a new sprite"
+        title="Создать новый спрайт"
         rel="tooltip"
         data-placement="left"
         >+</a
@@ -85,7 +85,7 @@
           <div class="vertical-centerer">
             <div
               class="pen-size-container size-picker-container"
-              title="Pen size<br/>from 1 to 4 pixels"
+              title="Размер пера<br/>от 1 до 4 пикселей"
               rel="tooltip"
               data-placement="top"
               data-test-id="pen-size-picker"
@@ -115,7 +115,7 @@
               id="tools-container"
               class="tools-wrapper"
               data-test-id="tools-container"
-            ><!-- Drawing tools will be inserted here --></ul>
+            ><!-- Инструменты рисования будут вставлены сюда --></ul>
             <div class="palette-wrapper">
               <div
                 class="tool-icon tool-color-picker"
@@ -146,7 +146,7 @@
               <div
                 class="swap-colors-button icon-common-swapcolors-arrow-grey"
                 data-test-id="swap-colors-button"
-                title="Swap colors (X)"
+                title="Поменять цвета (X)"
                 rel="tooltip"
                 data-placement="right"
               ></div>
@@ -217,19 +217,19 @@
                     data-placement="left"
                     data-test-id="preview-size-full"
                   >
-                    Full
+                    Полный
                   </div>
                 </div>
                 <div
                   class="preview-contextual-action  toggle-grid-button  icon-minimap-grid-white"
-                  title="Toggle grid"
+                  title="Переключить сетку"
                   rel="tooltip"
                   data-placement="bottom"
                   data-test-id="grid-toggle-button"
                 ></div>
                 <div
                   class="preview-contextual-action  open-popup-preview-button  icon-minimap-popup-preview-arrow-white"
-                  title="Open preview in popup"
+                  title="Открыть предпросмотр во всплывающем окне"
                   rel="tooltip"
                   data-placement="bottom"
                   data-test-id="open-popup-preview-button"
@@ -272,7 +272,7 @@
             data-test-id="layer-list"
           >
             <h3 class="toolbox-title layers-title">
-              Layers
+              Слои
               <div
                 rel="tooltip"
                 data-placement="left"
@@ -293,7 +293,7 @@
                 data-action="up"
                 data-test-id="layer-move-up-button"
                 class="button layers-button piskel-icon-arrow-up-fat"
-                title="Move layer up"
+                title="Переместить слой выше"
                 rel="tooltip"
                 data-placement="top"
               ></button>
@@ -302,7 +302,7 @@
                 data-action="down"
                 data-test-id="layer-move-down-button"
                 class="button layers-button piskel-icon-arrow-down-fat"
-                title="Move layer down"
+                title="Переместить слой ниже"
                 rel="tooltip"
                 data-placement="top"
               ></button>
@@ -311,7 +311,7 @@
                 data-action="edit"
                 data-test-id="layer-edit-button"
                 class="button layers-button piskel-icon-pencil"
-                title="Edit layer name"
+                title="Изменить имя слоя"
                 rel="tooltip"
                 data-placement="top"
               ></button>
@@ -320,7 +320,7 @@
                 data-action="merge"
                 data-test-id="layer-merge-button"
                 class="button layers-button piskel-icon-merge"
-                title="Merge with layer below"
+                title="Объединить со слоем ниже"
                 rel="tooltip"
                 data-placement="top"
               ></button>
@@ -329,7 +329,7 @@
                 data-action="delete"
                 data-test-id="layer-delete-button"
                 class="button layers-button piskel-icon-close"
-                title="Delete selected layer"
+                title="Удалить выбранный слой"
                 rel="tooltip"
                 data-placement="top"
               ></button>
@@ -342,7 +342,7 @@
         data-layer-index="{{layerindex}}" data-test-id="layer-item">
         <span class="layer-name" data-placement="top" data-test-id="layer-name">{{layername}}</span>
         <span class="layer-item-opacity" data-test-id="layer-opacity"
-              title="Layer opacity ({{opacity}})" rel="tooltip" data-placement="top">
+              title="Прозрачность слоя ({{opacity}})" rel="tooltip" data-placement="top">
             &#945;
         </span>
     </li>
@@ -355,10 +355,10 @@
 
           <div class="toolbox-container transformations-container">
             <h3 class="toolbox-title transformations-title">
-              Transform
+              Преобразование
               <span
                 class="transformations-show-more-link piskel-icon-plus"
-                title="View more tools"
+                title="Показать больше инструментов"
                 rel="tooltip"
                 data-placement="top"
               ></span>
@@ -367,12 +367,12 @@
           </div>
 
           <div class="toolbox-container palettes-list-container">
-            <h3 class="toolbox-title palettes-title">Palettes</h3>
+            <h3 class="toolbox-title palettes-title">Палитры</h3>
             <div class="toolbox-buttons">
               <button
                 class="button palettes-list-button create-palette-button piskel-icon-plus"
                 data-action="add"
-                title="Create a new palette"
+                title="Создать новую палитру"
                 rel="tooltip"
                 data-placement="top"
                 data-test-id="create-palette-button"
@@ -384,7 +384,7 @@
               <button
                 class="button palettes-list-button edit-palette-button  piskel-icon-pencil"
                 data-action="edit"
-                title="Manage this palette"
+                title="Управлять этой палитрой"
                 rel="tooltip"
                 data-placement="top"
               ></button>
@@ -401,7 +401,7 @@
 
             <script type="text/template" id="palettes-list-no-colors-partial">
     <div class="palettes-list-no-colors">
-      No color in this palette…
+      В этой палитре нет цветов…
     </div>
   </script>
           </div>
@@ -420,7 +420,7 @@
             <div
               data-setting="user"
               class="tool-icon icon-settings-gear-white"
-              title="<span class='highlight'>PREFERENCES</span></br>"
+              title="<span class='highlight'>НАСТРОЙКИ</span></br>"
               rel="tooltip"
               data-placement="left"
             ></div>
@@ -428,7 +428,7 @@
             <div
               data-setting="resize"
               class="tool-icon  icon-settings-resize-white"
-              title="<span class='highlight'>RESIZE</span></br>Resize the drawing area"
+              title="<span class='highlight'>РАЗМЕР</span></br>Изменить размер области рисования"
               rel="tooltip"
               data-placement="left"
             ></div>
@@ -436,7 +436,7 @@
             <div
               data-setting="save"
               class="tool-icon  icon-settings-save-white"
-              title="<span class='highlight'>SAVE</span></br>Save locally or export as a file"
+              title="<span class='highlight'>СОХРАНИТЬ</span></br>Сохранить локально или экспортировать как файл"
               rel="tooltip"
               data-placement="left"
             ></div>
@@ -444,7 +444,7 @@
             <div
               data-setting="export"
               class="tool-icon  icon-settings-export-white"
-              title="<span class='highlight'>EXPORT</span></br>Export as Image, as Spritesheet<br/>or as Animated GIF"
+              title="<span class='highlight'>ЭКСПОРТ</span></br>Экспортировать как изображение, спрайт-лист<br/>или анимированный GIF"
               rel="tooltip"
               data-placement="left"
             ></div>
@@ -452,7 +452,7 @@
             <div
               data-setting="import"
               class="tool-icon  icon-settings-open-folder-white"
-              title="<span class='highlight'>IMPORT</span></br>Import an existing image,<br/>an animated GIF or a .piskel file"
+              title="<span class='highlight'>ИМПОРТ</span></br>Импортировать существующее изображение,<br/>анимированный GIF или файл .piskel"
               rel="tooltip"
               data-placement="left"
             ></div>
@@ -563,11 +563,11 @@
     </style>
     <body>
       <div id="image-wrapper">
-        <img src="{{src}}" alt="Exported image as data-uri">
+        <img src="{{src}}" alt="Экспортированное изображение как data URI">
       </div>
       <div id="bottom-wrapper">
         <textarea spellcheck="false" onclick="this.select()">{{src}}</textarea>
-        <span>Data-uri for the exported framesheet</span>
+        <span>Data URI для экспортированного листа кадров</span>
       </div>
     </body>
   </script>
@@ -642,14 +642,14 @@
       class="cheatsheet-link icon-common-keyboard-gold"
       rel="tooltip"
       data-placement="right"
-      title="Keyboard shortcuts"
+      title="Горячие клавиши"
       >&nbsp;</span
     >
     <div
       class="performance-link icon-common-warning-red"
       rel="tooltip"
       data-placement="left"
-      title="Performance problem detected, learn more."
+      title="Обнаружена проблема производительности, подробнее."
     >
       &nbsp;
     </div>
@@ -658,7 +658,7 @@
     <script type="text/template" id="templates/dialogs/browse-backups.html">
   <div class="dialog-wrapper">
     <h3 class="dialog-head">
-      Browse backups
+      Просмотр резервных копий
       <span class="dialog-close">X</span>
     </h3>
     <div class="dialog-content backups-wizard-container"></div>
@@ -672,10 +672,10 @@
       <div class="backups-icon icon-common-backup-white">&nbsp;</div>
       <div class="browse-backups-disclaimer-content">
         <!-- Keep in sync with MAX_SESSIONS in BackupService.js -->
-        If you forgot to save your work or if Piskel crashed, try to restore one of the automatically backed up sessions below (up to 10 sessions).
+        Если вы забыли сохранить работу или Piskel аварийно завершился, попробуйте восстановить одну из автоматически созданных ниже резервных копий сеанса (до 10 сеансов).
         <br/>
         <br/>
-        Backups may be erased without notice, so try to save your work to a file as soon as you can.
+        Резервные копии могут быть удалены без предупреждения, поэтому постарайтесь как можно скорее сохранить работу в файл.
       </div>
     </div>
     <div class="session-list">
@@ -685,11 +685,11 @@
 </script>
 
     <script type="text/template" id="session-list-empty">
-<div class="centered-message session-list-empty">No session found ...</div>
+<div class="centered-message session-list-empty">Сеансы не найдены ...</div>
 </script>
 
     <script type="text/template" id="session-list-error">
-<div class="centered-message session-list-error">Could not load backup sessions, something went wrong.</div>
+<div class="centered-message session-list-error">Не удалось загрузить резервные копии сеансов, что-то пошло не так.</div>
 </script>
 
     <script type="text/template" id="session-list-item">
@@ -700,7 +700,7 @@
     <span class="session-details-info">{{count}} saved</span>
   </div>
   <div class="session-actions">
-    <button class="button" data-session-id="{{id}}" data-action="delete">Delete</button>
+    <button class="button" data-session-id="{{id}}" data-action="delete">Удалить</button>
     <button class="button button-primary" data-session-id="{{id}}" data-action="view">View</button>
   </div>
 </div>
@@ -718,11 +718,11 @@
 </script>
 
     <script type="text/template" id="snapshot-list-empty">
-<div class="centered-message snapshot-list-empty">No snapshot found ...</div>
+<div class="centered-message snapshot-list-empty">Снимки не найдены ...</div>
 </script>
 
     <script type="text/template" id="snapshot-list-error">
-<div class="centered-message snapshot-list-error">Could not load snapshots, something went wrong.</div>
+<div class="centered-message snapshot-list-error">Не удалось загрузить снимки, что-то пошло не так.</div>
 </script>
 
     <script type="text/template" id="snapshot-list-item">
@@ -734,7 +734,7 @@
     <span class="snapshot-details-info">{{frames}}, size {{resolution}}, {{fps}}fps</span>
   </div>
   <div class="snapshot-actions">
-    <button class="button button-primary" data-action="load" data-snapshot-id="{{id}}">Load</button>
+    <button class="button button-primary" data-action="load" data-snapshot-id="{{id}}">Загрузить</button>
   </div>
 </div>
 </script>
@@ -742,16 +742,16 @@
     <script type="text/template" id="templates/dialogs/browse-local.html">
   <div class="dialog-wrapper">
     <h3 class="dialog-head">
-      Browse Local Piskels
+      Просмотр локальных Piskel
       <span class="dialog-close">X</span>
     </h3>
     <div class="dialog-content" style="padding:10px 20px; font-size:1.5em; overflow: auto;">
       <table class="local-piskel-list">
         <thead>
           <tr class="local-piskel-list-head">
-            <td class="local-piskel-name">Name</td>
+            <td class="local-piskel-name">Имя</td>
             <td class="local-piskel-save-date">Date</td>
-            <td colspan=2>Actions</td>
+            <td colspan=2>Действия</td>
           </tr>
         </thead>
         <tbody></tbody>
@@ -764,15 +764,15 @@
   <tr class="local-piskel-item">
     <td class="local-piskel-name">{{name}}</td>
     <td class="local-piskel-save-date">{{date}}</td>
-    <td><button type="button" data-action="load" data-name="{{name}}" class="button button-primary local-piskel-load-button">Load</button></td>
-    <td><button type="button" data-action="delete" data-name="{{name}}" class="button local-piskel-delete-button">Delete</button></td>
+    <td><button type="button" data-action="load" data-name="{{name}}" class="button button-primary local-piskel-load-button">Загрузить</button></td>
+    <td><button type="button" data-action="delete" data-name="{{name}}" class="button local-piskel-delete-button">Удалить</button></td>
   </tr>
 </script>
 
     <script type="text/template" id="templates/dialogs/cheatsheet.html">
   <div id="cheatsheetContainer" class="dialog-wrapper">
     <h3 class="dialog-head">
-      <span class="dialog-title">Keyboard shortcuts</span>
+      <span class="dialog-title">Горячие клавиши</span>
       <span class="dialog-close">X</span>
     </h3>
     <div class="cheatsheet-container dialog-content">
@@ -786,7 +786,7 @@
       </div>
       <div class="cheatsheet-boxes">
         <div class="cheatsheet-section">
-          <h3 class="cheatsheet-title">Selection shortcuts</h3>
+          <h3 class="cheatsheet-title">Сочетания выделения</h3>
           <ul class="cheatsheet-selection-shortcuts"></ul>
         </div>
         <div class="cheatsheet-section">
@@ -801,7 +801,7 @@
     </div>
     <div class="cheatsheet-actions">
       <span class="cheatsheet-helptext" rel="tooltip" data-placement="top" title="!!!Set in CheatsheetController!!!"><b>Customize shortcuts ?</b></span>
-      <button type="button" name="cheatsheet-restore-defaults" data-action="restore-defaults" class="button cheatsheet-button cheatsheet-restore-defaults">Restore default shortcuts</button>
+      <button type="button" name="cheatsheet-restore-defaults" data-action="restore-defaults" class="button cheatsheet-button cheatsheet-restore-defaults">Восстановить сочетания по умолчанию</button>
     </div>
 
     <!-- Event trap to capture keyboard remaps -->
@@ -822,22 +822,22 @@
     <script type="text/template" id="templates/dialogs/create-palette.html">
   <div class="dialog-wrapper">
     <h3 class="dialog-head">
-      <span class="dialog-title">Create palette</span>
+      <span class="dialog-title">Создать палитру</span>
       <span class="dialog-close">X</span>
     </h3>
     <div class="dialog-create-palette" style="font-size:1.3em">
         <div class="create-palette-section form-section">
-          <span class="create-palette-name-label">Name</span>
-          <input type="text" class="textfield create-palette-name-input" name="palette-name" placeholder="palette name ..."/>
+          <span class="create-palette-name-label">Имя</span>
+          <input type="text" class="textfield create-palette-name-input" name="palette-name" placeholder="имя палитры ..."/>
           <div class="create-palette-import-section">
             <button
               type="button"
-              rel="tooltip" data-placement="right" title="Import palette from an existing Image or from a palette file"
-              class="button  button-primary create-palette-import-button">Import from file</button>
+              rel="tooltip" data-placement="right" title="Импортировать палитру из существующего изображения или файла палитры"
+              class="button  button-primary create-palette-import-button">Импортировать из файла</button>
             <button
               type="button"
-              rel="tooltip" data-placement="right" title="Download the palette as a GPL file"
-              class="button  button-primary create-palette-download-button">Download as file</button>
+              rel="tooltip" data-placement="right" title="Скачать палитру как файл GPL"
+              class="button  button-primary create-palette-download-button">Скачать как файл</button>
             <input style="display:none"
               class="create-palette-import-input"
               type="file" value="file" accept="*"/>
@@ -885,10 +885,10 @@
           </div>
         </div>
         <div class="create-palette-actions">
-          <button type="button" name="create-palette-cancel" data-action="cancel" class="button create-palette-cancel">Cancel</button>
-          <button type="button" name="create-palette-delete" data-action="delete" class="button button-primary create-palette-delete">Delete</button>
-          <!-- <button type="button" name="create-palette-clone" class="button button-primary create-palette-clone">Save as new</button> -->
-          <button type="button" name="create-palette-submit" data-action="submit" class="button button-primary create-palette-submit">Save</button>
+          <button type="button" name="create-palette-cancel" data-action="cancel" class="button create-palette-cancel">Отмена</button>
+          <button type="button" name="create-palette-delete" data-action="delete" class="button button-primary create-palette-delete">Удалить</button>
+          <!-- <button type="button" name="create-palette-clone" class="button button-primary create-palette-clone">Сохранить как новый</button> -->
+          <button type="button" name="create-palette-submit" data-action="submit" class="button button-primary create-palette-submit">Сохранить</button>
         </div>
     </div>
   </div>
@@ -907,7 +907,7 @@
     <script type="text/template" id="templates/dialogs/import.html">
   <div class="dialog-wrapper">
     <h3 class="dialog-head">
-      Import and Merge
+      Импортировать и объединить
       <span class="dialog-close">X</span>
     </h3>
     <div class="dialog-content import-wizard-container"></div>
@@ -918,7 +918,7 @@
 <div class="import-step-container import-image-container">
   <form action="" method="POST" name="import-image-form">
     <div class="import-section">
-      <span class="dialog-section-title">Name :</span><span class="import-image-file-name"></span>
+      <span class="dialog-section-title">Имя:</span><span class="import-image-file-name"></span>
     </div>
     <div class="import-section">
       <div class="import-section-preview"></div>
@@ -926,11 +926,11 @@
     <div class="import-section">
       <label class="dialog-section-radio-label">
         <input class="dialog-section-radio" name="import-type" value="single" type="radio" checked="checked">
-        Import as single image
+        Импортировать как одно изображение
       </label>
     </div>
     <div class="import-section import-subsection">
-      <span class="dialog-section-title">Resize to</span>
+      <span class="dialog-section-title">Изменить размер до</span>
       <input type="text" class="textfield import-size-field" autocomplete="off" name="resize-width"/>x
       <input type="text" class="textfield import-size-field" autocomplete="off" name="resize-height"/>
     </div>
@@ -941,11 +941,11 @@
     <div class="import-section">
       <label class="dialog-section-radio-label">
         <input class="dialog-section-radio" name="import-type" value="sheet" type="radio">
-        Import as spritesheet
+        Импортировать как спрайт-лист
       </label>
     </div>
     <div class="import-section import-subsection">
-      <span class="dialog-section-title">Frame size</span>
+      <span class="dialog-section-title">Размер кадра</span>
       <input type="text" class="textfield import-size-field" autocomplete="off" name="frame-size-x"/>x
       <input type="text" class="textfield import-size-field" autocomplete="off" name="frame-size-y"/>
     </div>
@@ -992,7 +992,7 @@
 
     <script type="text/template" id="import-meta-content">
   <div class="import-name">
-    <span class="import-meta-label">Name</span>
+    <span class="import-meta-label">Имя</span>
     <span class="import-meta-value" title="{{name}}">{{name}}</span>
   </div>
   <div class="import-dimensions">
@@ -1000,11 +1000,11 @@
     <span class="import-meta-value">{{dimensions}}</span>
   </div>
   <div class="import-frames">
-    <span class="import-meta-label">Frames</span>
+    <span class="import-meta-label">Кадры</span>
     <span class="import-meta-value">{{frames}}</span>
   </div>
   <div class="import-layers">
-    <span class="import-meta-label">Layers</span>
+    <span class="import-meta-label">Слои</span>
     <span class="import-meta-value">{{layers}}</span>
   </div>
 </script>
@@ -1034,7 +1034,7 @@
     <script type="text/template" id="import-resize-bigger-partial">
 <div class="import-resize-bigger">
   <div class="import-resize-section">
-    The imported image is bigger than the current sprite.
+    Импортируемое изображение больше текущего спрайта.
   </div>
   <div class="import-resize-section">
     <label class="import-resize-option">
@@ -1052,7 +1052,7 @@
     <script type="text/template" id="import-resize-smaller-partial">
 <div class="import-resize-smaller">
   <div class="import-resize-section">
-    The image being imported is smaller ({{newSize}}) than the canvas size ({{size}}).
+    Импортируемое изображение меньше ({{newSize}}), чем размер холста ({{size}}).
   </div>
 </div>
 </script>
@@ -1065,19 +1065,19 @@
   </div>
 
   <div class="import-step-content">
-    <div>Select the insertion frame:</div>
+    <div>Выберите кадр для вставки:</div>
     <div class="insert-frame-preview"></div>
     <div class="insert-mode-container">
       <div class="insert-mode-option-label">
-        Insert imported frames:
+        Вставить импортированные кадры:
       </div>
       <label class="insert-mode-option">
         <input type="radio" name="insert-mode" id="insert-mode-add" value="add" checked="checked"/>
-        <span>as new frames</span>
+        <span>как новые кадры</span>
       </label>
       <label class="insert-mode-option">
         <input type="radio" name="insert-mode" id="insert-mode-insert" value="insert"/>
-        <span>in existing frames</span>
+        <span>в существующие кадры</span>
       </label>
     </div>
     <div class="import-step-buttons">
@@ -1091,28 +1091,28 @@
     <script type="text/template" id="templates/dialogs/performance-info.html">
   <div class="dialog-wrapper">
     <h3 class="dialog-head">
-      Performance issues
+      Проблемы производительности
       <span class="dialog-close">X</span>
     </h3>
     <div class="dialog-performance-info-body">
-      <p>The current sprite may exceed the recommendations for Piskel.</p>
-      <p>You can ignore this warning and continue working with your sprite but you might experience the following issues:</p>
+      <p>Текущий спрайт может превышать рекомендации Piskel.</p>
+      <p>Вы можете проигнорировать это предупреждение и продолжить работу со спрайтом, но возможны следующие проблемы:</p>
       <ul>
-        <li>saving failures</li>
-        <li>slowdowns</li>
-        <li>crashes</li>
+        <li>ошибки сохранения</li>
+        <li>замедления</li>
+        <li>сбои</li>
       </ul>
-      <p>If you ignore this warning, please save often!</p>
-      <p>To fix the issue, try adjusting your sprite settings:</p>
+      <p>Если вы игнорируете это предупреждение, сохраняйтесь чаще!</p>
+      <p>Чтобы исправить проблему, попробуйте изменить параметры спрайта:</p>
        <ul>
-        <li>sprite resolution <sup title="recommended: lower than 512x512" rel="tooltip" data-placement="top">?</sup></li>
-        <li>number of layers <sup title="recommended: less than 10" rel="tooltip" data-placement="top">?</sup></li>
-        <li>number of frames <sup title="recommended: less than 50" rel="tooltip" data-placement="top">?</sup></li>
-        <li>number of colors <sup title="recommended: less than 256" rel="tooltip" data-placement="top">?</sup></li>
+        <li>разрешение спрайта <sup title="рекомендуется: меньше 512x512" rel="tooltip" data-placement="top">?</sup></li>
+        <li>количество слоёв <sup title="рекомендуется: меньше 10" rel="tooltip" data-placement="top">?</sup></li>
+        <li>количество кадров <sup title="рекомендуется: меньше 50" rel="tooltip" data-placement="top">?</sup></li>
+        <li>количество цветов <sup title="рекомендуется: меньше 256" rel="tooltip" data-placement="top">?</sup></li>
       </ul>
-      <p>We strive to improve Piskel, its performance and stability, but this is a personal project with limited time and resources.
-         We prefer to warn you early rather than having you lose your work.</p>
-      <p>Feedback welcome at <a href="https://github.com/piskelapp/piskel" target="_blank">https://github.com/piskelapp/piskel</a></p>
+      <p>Мы стараемся улучшать Piskel, его производительность и стабильность, но это личный проект с ограниченными временем и ресурсами.
+         Мы предпочитаем предупредить вас заранее, а не допустить потерю работы.</p>
+      <p>Отзывы принимаются на <a href="https://github.com/piskelapp/piskel" target="_blank">https://github.com/piskelapp/piskel</a></p>
       <p>
         <div class="warning-icon icon-common-warning-red">&nbsp;</div>
         <div class="warning-icon-info">This icon will remain on the bottom-right of the application until the performance issue is fixed. You can click on it at anytime to display this information again.</div>
@@ -1127,18 +1127,18 @@
     >
   <div class="dialog-wrapper">
     <h3 class="dialog-head">
-      Browser not supported
+      Браузер не поддерживается
       <span class="dialog-close">X</span>
     </h3>
     <div class="dialog-content">
-      <p>Your current browser (<span id="current-user-agent"></span>) is not supported.</p>
-      <p>Piskel is currently tested for:</p>
+      <p>Ваш текущий браузер (<span id="current-user-agent"></span>) не поддерживается.</p>
+      <p>Piskel сейчас тестируется для:</p>
       <ul class="supported-browser-list">
         <li>Google Chrome <a href="https://www.google.com/chrome/browser/desktop/" target="_blank">https://www.google.com/chrome/browser/desktop/</a></li>
         <li>Mozilla Firefox <a href="https://www.mozilla.org/en-US/firefox/" target="_blank">https://www.mozilla.org/en-US/firefox/</a></li>
         <li>Microsoft Edge <a href="https://www.microsoft.com/en-us/windows/microsoft-edge" target="_blank">https://www.microsoft.com/en-us/windows/microsoft-edge</a></li>
       </ul>
-      <p>This browser has not been tested with Piskel, you might experience unknown bugs and crashes if you decide to continue.</p>
+      <p>Этот браузер не тестировался с Piskel; если продолжить, возможны неизвестные ошибки и сбои.</p>
     </div>
   </div>
 </script>
@@ -1146,7 +1146,7 @@
     <!-- settings-panel partials -->
     <script type="text/html" id="templates/settings/preferences.html">
   <div class="settings-section settings-section-preferences">
-    <div class="settings-title">Settings</div>
+    <div class="settings-title">Настройки</div>
     <div class="tab-list">
       <div class="tab-item" data-tab-id="misc">Misc</div>
       <div class="tab-item" data-tab-id="grid">Grid</div>
@@ -1161,12 +1161,12 @@
   <div class="preferences-panel-grid">
     <div class="settings-item">
       <label>
-        Enable grid
+        Включить сетку
         <input type="checkbox" value="1" class="enable-grid-checkbox" name="enable-grid-checkbox"/>
       </label>
     </div>
     <div class="settings-item settings-item-grid-size">
-      <label>Grid size</label>
+      <label>Размер сетки</label>
       <div class="grid-size-container size-picker-container">
         <div class="size-picker-option"
           title="1px" rel="tooltip" data-placement="top" data-size="1"></div>
@@ -1179,7 +1179,7 @@
       </div>
     </div>
     <div class="settings-item settings-item-grid-spacing">
-      <label>Grid spacing</label>
+      <label>Интервал сетки</label>
       <div class="grid-spacing-container size-picker-container">
         <div class="size-picker-option"
           title="1px" rel="tooltip" data-placement="top" data-size="1"></div>
@@ -1198,7 +1198,7 @@
       </div>
     </div>
     <div class="settings-item settings-item-grid-color">
-      <label>Grid color</label>
+      <label>Цвет сетки</label>
       <div class="grid-colors-list"></div>
       <script type="text/template" id="color-list-item-template">
         <div class="grid-colors-item {{:selected}}"
@@ -1211,36 +1211,36 @@
     <script type="text/html" id="templates/settings/preferences/misc.html">
   <div class="preferences-panel-misc">
     <div class="settings-item">
-      <label>Background</label>
+      <label>Фон</label>
       <div class="background-picker-wrapper">
         <div class="background-picker light-picker-background" data-background="light-canvas-background"
-              rel="tooltip" data-placement="bottom" title="light / high contrast">
+              rel="tooltip" data-placement="bottom" title="светлый / высокий контраст">
         </div>
         <div class="background-picker medium-picker-background" data-background="medium-canvas-background"
-              rel="tooltip" data-placement="bottom" title="medium / high contrast">
+              rel="tooltip" data-placement="bottom" title="средний / высокий контраст">
         </div>
         <div class="background-picker lowcont-medium-picker-background" data-background="lowcont-medium-canvas-background"
-              rel="tooltip" data-placement="bottom" title="medium / low contrast">
+              rel="tooltip" data-placement="bottom" title="средний / низкий контраст">
         </div>
         <div class="background-picker lowcont-dark-picker-background" data-background="lowcont-dark-canvas-background"
-              rel="tooltip" data-placement="bottom" title="dark / low contrast">
+              rel="tooltip" data-placement="bottom" title="тёмный / низкий контраст">
         </div>
       </div>
     </div>
 
     <div class="settings-item">
-      <label>Layer opacity</label>
+      <label>Прозрачность слоя</label>
       <input type="range" class="settings-opacity-input layer-opacity-input" name="layer-opacity" min="0"  max="1" step="0.05"/>
       <span class="settings-opacity-text layer-opacity-text"></span>
     </div>
 
     <div class="settings-item">
-      <label>Maximum FPS</label>
+      <label>Максимальный FPS</label>
       <input type="text" class="textfield  textfield-small  max-fps-input" autocomplete="off" name="max-fps"/>
     </div>
 
     <div class="settings-item">
-      <label for="color-format">Color format</label>
+      <label for="color-format">Формат цвета</label>
       <select id="color-format" class="color-format-select">
         <option value="hex">Hex</option>
         <option value="rgb">RGB</option>
@@ -1253,13 +1253,13 @@
   <div class="preferences-panel-tile">
     <div class="settings-item">
       <label>
-        Enable tile mode
+        Включить режим тайлов
         <input type="checkbox" value="1" class="tile-mode-checkbox" name="tile-mode-checkbox"/>
       </label>
     </div>
 
     <div class="settings-item">
-      <label>Mask opacity</label>
+      <label>Прозрачность маски</label>
       <input type="range" min="0" max="0.5" step="0.01"
         class="settings-opacity-input tile-mask-opacity-input" name="tile-mask-opacity"/>
       <span class="settings-opacity-text tile-mask-opacity-text"></span>
@@ -1271,52 +1271,52 @@
   <div class="settings-section settings-section-resize">
     <!-- RESIZE DRAWING SECTION -->
     <div class="settings-title">
-      Resize
+      Изменить размер
     </div>
     <div class="settings-item  resize-canvas">
       <form action="" method="POST" name="resize-canvas-form">
         <div class="resize-section">
-          <span  class="resize-section-title">Width</span>
+          <span  class="resize-section-title">Ширина</span>
           <input type="text" class="textfield resize-size-field" autocomplete="off" name="resize-width"/>
           <span>px</span>
         </div>
         <div class="resize-section">
-          <span  class="resize-section-title">Height</span>
+          <span  class="resize-section-title">Высота</span>
           <input type="text" class="textfield resize-size-field" autocomplete="off" name="resize-height"/>
           <span>px</span>
         </div>
         <div class="resize-section">
           <label class="checkbox-container">
             <input type="checkbox" class="resize-ratio-checkbox checkbox-fix" value="true"/>
-            <span>Maintain aspect ratio</span>
+            <span>Сохранять пропорции</span>
           </label>
         </div>
         <div class="resize-section">
           <label class="checkbox-container">
             <input type="checkbox" class="resize-content-checkbox checkbox-fix" value="true"/>
-            <span>Resize canvas content</span>
+            <span>Изменять содержимое холста</span>
           </label>
         </div>
         <div class="resize-section">
           <span  class="resize-section-title">Anchor</span>
           <div class="resize-anchor-container"></div>
         </div>
-        <input type="submit" class="button button-primary resize-button" value="Resize" />
+        <input type="submit" class="button button-primary resize-button" value="Изменить размер" />
       </form>
     </div>
     <!-- DEFAULT SIZE SECTION -->
     <div class="settings-title">
-      Default size
+      Размер по умолчанию
     </div>
     <div class="settings-item  settings-default-size">
       <form action="" method="POST" name="default-size-form">
         <div class="resize-section">
-          <span  class="resize-section-title">Width</span>
+          <span  class="resize-section-title">Ширина</span>
           <input type="text" class="textfield resize-size-field" autocomplete="off" name="default-width"/>
           <span>px</span>
         </div>
         <div class="resize-section">
-          <span  class="resize-section-title">Height</span>
+          <span  class="resize-section-title">Высота</span>
           <input type="text" class="textfield resize-size-field" autocomplete="off" name="default-height"/>
           <span>px</span>
         </div>
@@ -1341,7 +1341,7 @@
         </div>
         <div class="settings-form-section  save-public-section">
           <label class="row">
-            Public : <input type="checkbox" value="1" name="save-public-checkbox"/>
+            Публичный: <input type="checkbox" value="1" name="save-public-checkbox"/>
           </label>
         </div>
       </div>
@@ -1351,28 +1351,28 @@
 
     <!-- save-localstorage-partial -->
     <script type="text/template" id="save-localstorage-partial">
-  <div class="settings-title">Save offline in Browser</div>
+  <div class="settings-title">Сохранить офлайн в браузере</div>
   <div class="settings-item">
-    <input type="button" class="button button-primary" id="save-localstorage-button" value="Save in Browser" />
+    <input type="button" class="button button-primary" id="save-localstorage-button" value="Сохранить в браузере" />
     <div class="save-status">Your piskel will be saved locally and will only be accessible from this browser.</div>
   </div>
 </script>
 
     <!-- save-desktop-partial -->
     <script type="text/template" id="save-desktop-partial">
-  <div class="settings-title">Save as File</div>
+  <div class="settings-title">Сохранить как файл</div>
   <div class="settings-item">
-    <input type="button" class="button button-primary" id="save-desktop-button" value="Save" />
-    <input type="button" class="button button-primary" id="save-desktop-as-new-button" value="Save as ..." />
+    <input type="button" class="button button-primary" id="save-desktop-button" value="Сохранить" />
+    <input type="button" class="button button-primary" id="save-desktop-as-new-button" value="Сохранить как ..." />
     <div class="save-status">Your sprite will be saved as a .piskel file.</div>
   </div>
 </script>
 
     <!-- save-file-download-partial -->
     <script type="text/template" id="save-file-download-partial">
-  <div class="settings-title">Save offline as File</div>
+  <div class="settings-title">Сохранить офлайн как файл</div>
   <div class="settings-item">
-    <input type="button" class="button button-primary" id="save-file-download-button" value="Save as .piskel" data-test-id="save-file-download-button" />
+    <input type="button" class="button button-primary" id="save-file-download-button" value="Сохранить как .piskel" data-test-id="save-file-download-button" />
     <div class="save-status">Your sprite will be downloaded as a .piskel file.</div>
   </div>
 </script>
@@ -1380,22 +1380,22 @@
     <script type="text/template" id="templates/settings/import.html">
   <div class="settings-section settings-section-import">
     <div class="settings-title">
-      Load from Browser
+      Загрузить из браузера
     </div>
     <div class="settings-item">
-      <span>Load a <span class="import-highlight">local piskel</span> saved in this Browser</span>
+      <span>Загрузить <span class="import-highlight">локальный piskel</span>, сохранённый в этом браузере</span>
       <div class="import-section">
-        <button type="button" class="button  button-primary browse-local-button">Browse local saves</button>
+        <button type="button" class="button  button-primary browse-local-button">Просмотр локальных сохранений</button>
       </div>
     </div>
     <div class="settings-title">
-      Load .piskel file
+      Загрузить файл .piskel
     </div>
     <div class="settings-item">
-      <span>Load a <span class="import-highlight">.piskel</span> file from your computer</span>
+      <span>Загрузить файл <span class="import-highlight">.piskel</span> с компьютера</span>
 
       <div class="import-section">
-        <button type="button" class="button  button-primary open-piskel-button" data-test-id="import-piskel-button">Browse .piskel files</button>
+        <button type="button" class="button  button-primary open-piskel-button" data-test-id="import-piskel-button">Выбрать файлы .piskel</button>
         <span class="file-input-open-piskel-status"></span>
         <input style="display:none"
           type="file" name="open-piskel-input"
@@ -1403,24 +1403,24 @@
       </div>
     </div>
     <div class="settings-title">
-      Import From Picture
+      Импортировать из изображения
     </div>
     <div class="settings-item">
-      <div style="margin-top:5px;margin-bottom:5px;">Supports <span class="import-highlight">PNG, JPG, BMP, Animated GIF</span></div>
+      <div style="margin-top:5px;margin-bottom:5px;">Поддерживаются <span class="import-highlight">PNG, JPG, BMP, анимированный GIF</span></div>
       <div class="import-section">
-        <button type="button" class="button  button-primary file-input-button" data-test-id="import-image-button">Browse images</button>
+        <button type="button" class="button  button-primary file-input-button" data-test-id="import-image-button">Выбрать изображения</button>
         <input style="display:none"
           type="file" name="file-upload-input"
           value="file" accept="image/*"/>
       </div>
     </div>
     <div class="settings-title">
-      Recover recent sessions
+      Восстановить недавние сеансы
     </div>
     <div class="settings-item">
-      Browse backups of previous sessions.
+      Просмотреть резервные копии предыдущих сеансов.
       <div style="margin-top:10px;">
-        <button type="button" class="button button-primary browse-backups-button" data-test-id="browse-backups-button">Browse backups</button>
+        <button type="button" class="button button-primary browse-backups-button" data-test-id="browse-backups-button">Просмотр резервных копий</button>
       </div>
     </div>
   </div>
@@ -1428,16 +1428,16 @@
 
     <script type="text/html" id="templates/settings/export.html">
   <div class="settings-section settings-section-export">
-    <div class="settings-title">Export</div>
-    <div class="settings-item export-scale" title="Scale the animation for export"
+    <div class="settings-title">Экспорт</div>
+    <div class="settings-item export-scale" title="Масштаб анимации для экспорта"
         rel="tooltip"
         data-placement="top">
-      <label for="scale-input">Scale</label>
+      <label for="scale-input">Масштаб</label>
       <input type="range" class="scale-input" name="scale-input" min="1"  max="32" step="1"/>
       <span class="scale-text"></span>
     </div>
     <div class="settings-item export-resize">
-      <span class="resize-label">Resolution</span>
+      <span class="resize-label">Разрешение</span>
       <input type="text" class="textfield  resize-field  resize-width" autocomplete="off" name="resize-width"/>
       <div class="resize-label">x</div>
       <input type="text" class="textfield  resize-field  resize-height" autocomplete="off" name="resize-height"/>
@@ -1445,8 +1445,8 @@
     <div class="export-tabs tab-list">
       <div class="export-tab tab-item" data-tab-id="gif">GIF</div>
       <div class="export-tab tab-item" data-tab-id="png">PNG</div>
-      <div class="export-tab tab-item" data-tab-id="zip">Zip</div>
-      <div class="export-tab tab-item" data-tab-id="misc">Others</div>
+      <div class="export-tab tab-item" data-tab-id="zip">ZIP</div>
+      <div class="export-tab tab-item" data-tab-id="misc">Другое</div>
     </div>
     <div class="export-panel tab-content"></div>
   </div>
@@ -1454,60 +1454,60 @@
 
     <script type="text/html" id="templates/settings/export/png.html">
   <div class="export-panel-png">
-    <div class="export-panel-header export-info">Export your animation as a PNG spritesheet containing all frames.</div>
+    <div class="export-panel-header export-info">Экспортировать анимацию как PNG-спрайт-лист со всеми кадрами.</div>
     <div class="export-panel-section  png-export-layout-section">
-      <div class="highlight" style="padding-bottom: 5px;">Spritesheet layout options:</div>
+      <div class="highlight" style="padding-bottom: 5px;">Параметры компоновки спрайт-листа:</div>
       <div style="display: flex; line-height: 20px;">
         <div style="flex: 1;">
-          <span>Columns</span>
+          <span>Столбцы</span>
           <input type="number" min="1" class="textfield" id="png-export-columns" name="png-export-columns">
         </div>
         <div style="flex: 1;">
-          <span>Rows</span>
+          <span>Строки</span>
           <input readonly="true" class="textfield" id="png-export-rows" name="png-export-rows">
         </div>
       </div>
     </div>
     <div class="export-panel-section">
       <div style="padding-bottom: 5px">
-        <span class="highlight export-panel-row">Spritesheet file export: </span>
+        <span class="highlight export-panel-row">Экспорт файла спрайт-листа: </span>
       </div>
       <div class="export-panel-row">
-        <button type="button" class="button button-primary png-download-button" data-test-id="png-download-button">Download</button>
+        <button type="button" class="button button-primary png-download-button" data-test-id="png-download-button">Скачать</button>
         <span class="png-export-dimension-info export-info"></span>
       </div>
     </div>
     <div class="export-panel-section">
       <div style="padding-bottom: 5px">
-        <span class="highlight export-panel-row">Spritesheet data-uri export: </span>
+        <span class="highlight export-panel-row">Экспорт data URI спрайт-листа: </span>
       </div>
       <div class="export-panel-row">
-        <button type="button" style="white-space: nowrap;" class="button button-primary datauri-open-button">Open</button>
-        <span class="export-info">Open the spritesheet as a data-uri</span>
+        <button type="button" style="white-space: nowrap;" class="button button-primary datauri-open-button">Открыть</button>
+        <span class="export-info">Открыть спрайт-лист как data URI</span>
       </div>
     </div>
 
     <div class="export-panel-section">
       <div style="padding-bottom: 5px">
-        <span class="highlight export-panel-row">PixiJS Movie export: </span>
+        <span class="highlight export-panel-row">Экспорт PixiJS Movie: </span>
       </div>
       <div class="checkbox-container" style="margin: 5px 0;">
         <input id="png-pixi-inline-image" class="png-pixi-inline-image-checkbox checkbox-fix" type="checkbox" />
-        <label for="png-pixi-inline-image">Inline spritesheet as data-uri</label>
+        <label for="png-pixi-inline-image">Встроить спрайт-лист как data URI</label>
       </div>
       <div class="export-panel-row">
-        <button type="button" class="button button-primary png-pixi-download-button"/>Download</button>
-        <span class="export-info">Spritesheet with JSON metadata</span>
+        <button type="button" class="button button-primary png-pixi-download-button"/>Скачать</button>
+        <span class="export-info">Спрайт-лист с метаданными JSON</span>
       </div>
     </div>
 
     <div class="export-panel-section">
       <div style="padding-bottom: 5px">
-        <span class="highlight">Selected frame export:</span>
+        <span class="highlight">Экспорт выбранного кадра:</span>
       </div>
       <div class="export-panel-row">
-        <button type="button" class="button button-primary selected-frame-download-button" data-test-id="png-selected-frame-download-button"/>Download</button>
-        <span class="export-info">Single frame as a PNG file</span>
+        <button type="button" class="button button-primary selected-frame-download-button" data-test-id="png-selected-frame-download-button"/>Скачать</button>
+        <span class="export-info">Один кадр как PNG-файл</span>
       </div>
     </div>
 
@@ -1517,46 +1517,46 @@
     <script type="text/html" id="templates/settings/export/gif.html">
   <div class="export-panel-gif">
     <div class="export-panel-header export-info">
-      Convert your sprite to an animated GIF.
+      Преобразовать спрайт в анимированный GIF.
     </div>
     <div class="gif-export-warning">
       <div class="gif-export-warning-icon icon-common-warning-red">&nbsp;</div>
       <div class="gif-export-warning-message">
-        Too many colors: can not preserve original colors or transparency.
+        Слишком много цветов: невозможно сохранить исходные цвета или прозрачность.
       </div>
     </div>
     <div class="export-panel-section export-panel-row">
       <input id="gif-repeat-checkbox" class="gif-repeat-checkbox checkbox-fix" type="checkbox" />
       <label for="gif-repeat-checkbox"
-             title="Uncheck to play the animation only one time."
+             title="Снимите флажок, чтобы воспроизвести анимацию только один раз."
              rel="tooltip"
-             data-placement="top">Loop repeatedly</label>
+             data-placement="top">Повторять циклически</label>
     </div>
     <div class="export-panel-section export-panel-row">
-      <button type="button" class="button button-primary gif-download-button">Download</button>
-      <div class="export-info">Download as an animated GIF.</div>
+      <button type="button" class="button button-primary gif-download-button">Скачать</button>
+      <div class="export-info">Скачать как анимированный GIF.</div>
     </div>
   </div>
 </script>
 
     <script type="text/html" id="templates/settings/export/zip.html">
   <div class="export-panel-zip">
-    <div class="export-panel-header export-info">ZIP archive containing one PNG for each frame. File names will start with the prefix below.</div>
+    <div class="export-panel-header export-info">ZIP-архив с отдельным PNG для каждого кадра. Имена файлов будут начинаться с указанного ниже префикса.</div>
     <div class="export-panel-section">
       <div style="display: flex; line-height: 23px;">
-        <label style="flex-shrink: 0; padding-right:5px;">Prefix</label>
+        <label style="flex-shrink: 0; padding-right:5px;">Префикс</label>
         <input type="text" style="flex: 1;" class="zip-prefix-name textfield"
-               autocomplete="off" placeholder="PNG file prefix ...">
+               autocomplete="off" placeholder="Префикс PNG-файла ...">
       </div>
       <div class="checkbox-container" style="margin: 5px 0;">
         <input id="zip-split-layers" class="zip-split-layers-checkbox checkbox-fix" type="checkbox" />
-        <label for="zip-split-layers">Split by layers</label>
+        <label for="zip-split-layers">Разделить по слоям</label>
       </div>
       <div class="checkbox-container use-layer-names-container" style="margin: 5px 0;">
         <input id="zip-use-layer-names" class="zip-use-layer-names-checkbox checkbox-fix" type="checkbox" />
-        <label for="zip-use-layer-names">Index by layer names</label>
+        <label for="zip-use-layer-names">Индексировать по именам слоёв</label>
       </div>
-      <button type="button" class="button button-primary zip-generate-button" data-test-id="zip-download-button"/>Download ZIP</button>
+      <button type="button" class="button button-primary zip-generate-button" data-test-id="zip-download-button"/>Скачать ZIP</button>
     </div>
   </div>
 </script>
@@ -1564,16 +1564,16 @@
     <script type="text/html" id="templates/settings/export/misc.html">
   <div class="export-panel-misc">
     <div class="export-panel-header export-info">
-      Less usual export formats. Feedback and improvements welcome.
+      Менее распространённые форматы экспорта. Отзывы и улучшения приветствуются.
     </div>
     <div class="export-panel-section">
       <div style="padding-bottom: 5px">
-        <span class="highlight">Export as C File: </span>
+        <span class="highlight">Экспорт как файл C: </span>
         <span class="export-info">
-          C file with frame rendered as array.
+          Файл C с кадром, представленным как массив.
         </span>
       </div>
-      <button type="button" class="button button-primary c-download-button" data-test-id="c-file-download-button">Download C file</button>
+      <button type="button" class="button button-primary c-download-button" data-test-id="c-file-download-button">Скачать файл C</button>
     </div>
   </div>
 </script>
