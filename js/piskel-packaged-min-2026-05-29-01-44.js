@@ -27312,7 +27312,7 @@ var ns = $.namespace("pskl.tools");
         this.shortcutService.init();
       var e = pskl.UserSettings.get(pskl.UserSettings.DEFAULT_SIZE),
         t = Constants.DEFAULT.FPS,
-        r = new pskl.model.piskel.Descriptor("Новый Piskel", ""),
+        r = new pskl.model.piskel.Descriptor("Новый спрайт", ""),
         i = new pskl.model.Piskel(e.width, e.height, t, r),
         n = new pskl.model.Layer("Слой 1"),
         o = new pskl.model.Frame(e.width, e.height);
