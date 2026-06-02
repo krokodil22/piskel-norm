@@ -27546,33 +27546,39 @@ var ns = $.namespace("pskl.tools");
 
   pskl.app.init = function () {
     originalInit.apply(this, arguments);
-    this.initSaveCurrentFrameButton_();
+    this.initSaveFramesheetButton_();
   };
 
-  pskl.app.initSaveCurrentFrameButton_ = function () {
-    var button = document.querySelector(".save-current-frame-button");
-    if (!button || button.getAttribute("data-save-frame-initialized") === "true") {
+  pskl.app.initSaveFramesheetButton_ = function () {
+    var buttons = document.querySelectorAll(".save-current-frame-button");
+    if (!buttons.length) {
       return;
     }
 
-    button.setAttribute("data-save-frame-initialized", "true");
-    button.addEventListener(
-      "click",
-      this.downloadCurrentFrameAsPng_.bind(this)
-    );
+    Array.prototype.forEach.call(buttons, function (button) {
+      if (button.getAttribute("data-save-sheet-initialized") === "true") {
+        return;
+      }
+
+      button.setAttribute("data-save-sheet-initialized", "true");
+      button.addEventListener(
+        "click",
+        this.downloadFramesheetAsPng_.bind(this)
+      );
+    }, this);
   };
 
-  pskl.app.downloadCurrentFrameAsPng_ = function () {
+  pskl.app.downloadFramesheetAsPng_ = function () {
     var piskelController = this.piskelController;
     if (!piskelController) {
       return;
     }
 
-    var frameIndex = piskelController.getCurrentFrameIndex();
-    var canvas = piskelController.renderFrameAt(frameIndex, true);
+    var renderer = new pskl.rendering.PiskelRenderer(piskelController);
+    var canvas = renderer.renderAsCanvas();
     var descriptor = piskelController.getPiskel().getDescriptor();
     var name = descriptor.name || "sprite";
-    var fileName = name + "-" + (frameIndex + 1) + ".png";
+    var fileName = name + "-sheet.png";
 
     pskl.utils.BlobUtils.canvasToBlob(canvas, function (blob) {
       pskl.utils.FileUtils.downloadAsFile(blob, fileName);
