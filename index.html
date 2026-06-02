@@ -183,6 +183,12 @@
             class="drawing-canvas-container canvas-container"
             data-test-id="drawing-canvas"
           >
+            <div
+              rel="tooltip"
+              data-placement="left"
+              class="piskel-icon-onion preview-toggle-onion-skin"
+              data-test-id="onion-skin-toggle-button"
+            ></div>
             <div class="canvas-background"></div>
           </div>
         </div>
@@ -244,12 +250,6 @@
               </div>
             </div>
             <div>
-              <div
-                rel="tooltip"
-                data-placement="bottom"
-                class="piskel-icon-onion preview-toggle-onion-skin"
-                data-test-id="onion-skin-toggle-button"
-              ></div>
               <span
                 id="display-fps"
                 class="display-fps"
@@ -390,6 +390,11 @@
               ></button>
             </div>
             <div class="palettes-list-colors"></div>
+            <button
+              type="button"
+              class="button save-current-frame-button"
+              data-test-id="save-current-frame-button"
+            >Сохранить лист</button>
             <script type="text/template" id="palette-color-template">
     <div class="palettes-list-color"
          data-color="{{color}}"
