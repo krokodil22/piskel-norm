@@ -38005,4 +38005,56 @@ ns.ToolsHelper = {
 })();
 ;(function () {})();
 
+
+;(function () {
+  if (!window.pskl || !pskl.app) {
+    return;
+  }
+
+  var originalInit = pskl.app.init;
+
+  pskl.app.init = function () {
+    originalInit.apply(this, arguments);
+    this.initSaveCurrentFrameButton_();
+  };
+
+  pskl.app.initSaveCurrentFrameButton_ = function () {
+    var buttons = document.querySelectorAll(".save-current-frame-button");
+    if (!buttons.length) {
+      return;
+    }
+
+    for (var i = 0; i < buttons.length - 1; i++) {
+      buttons[i].parentNode.removeChild(buttons[i]);
+    }
+
+    var button = buttons[buttons.length - 1];
+    if (button.getAttribute("data-save-frame-initialized") === "true") {
+      return;
+    }
+
+    button.setAttribute("data-save-frame-initialized", "true");
+    button.addEventListener(
+      "click",
+      this.downloadCurrentFrameAsPng_.bind(this)
+    );
+  };
+
+  pskl.app.downloadCurrentFrameAsPng_ = function () {
+    var piskelController = this.piskelController;
+    if (!piskelController) {
+      return;
+    }
+
+    var frameIndex = piskelController.getCurrentFrameIndex();
+    var canvas = piskelController.renderFrameAt(frameIndex, true);
+    var descriptor = piskelController.getPiskel().getDescriptor();
+    var name = descriptor.name || "sprite";
+    var fileName = name + "-" + (frameIndex + 1) + ".png";
+
+    pskl.utils.BlobUtils.canvasToBlob(canvas, function (blob) {
+      pskl.utils.FileUtils.downloadAsFile(blob, fileName);
+    });
+  };
+})();
 //# sourceMappingURL=piskel-packaged-2026-05-29-01-44.js.map
