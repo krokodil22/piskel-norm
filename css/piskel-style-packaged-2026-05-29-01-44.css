@@ -4657,6 +4657,8 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 
 .save-current-frame-button {
   width: calc(100% - 12px);
+  height: auto;
+  min-height: 32px;
   margin: 6px;
   padding: 8px 10px;
   border: 1px solid #b8860b;
@@ -4670,4 +4672,5 @@ See http://bgrins.github.io/spectrum/themes/ for instructions.
 
 .save-current-frame-button:hover {
   background: #ffd84d;
+  color: #222;
 }
